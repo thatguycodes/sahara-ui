@@ -1,5 +1,5 @@
 // Universal design tokens (Web & Mobile)
-export * from '@thatguycodes/tokens';
+export * from './tokens';
 
 // Package Metadata
 export const DESIGN_SYSTEM_VERSION = '1.0.0';
