@@ -1,0 +1,57 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Documentation/Introduction" />
+
+# Atomic UI — ThatGuyCodes Design System
+
+> **A beautifully crafted component system built on Radix UI, Tailwind CSS v4, and class-variance-authority, styled for high-performance developer cockpits and sovereign SaaS.**
+
+Inspired by [shadcn/ui](https://ui.shadcn.com/), this is **not a rigid component library** distributed as a bulky npm black-box. Instead, it is a collection of accessible, composable, copy-pasteable primitives designed to live directly in your codebase.
+
+---
+
+### Key Architectural Pillars
+
+* **Accessible Primitives**: Built on unstyled [Radix UI](https://www.radix-ui.com/) primitives to guarantee WAI-ARIA compliance, roving focus, and full keyboard navigation.
+* **Compound Architecture**: Flexible JSX composition (`<Accordion>`, `<AccordionItem>`, `<AccordionTrigger>`, `<AccordionContent>`) instead of rigid configuration objects.
+* **Polymorphic Slot Pattern**: Components like `<Button asChild>` leverage `@radix-ui/react-slot` to render as any underlying HTML element (e.g. Next.js `<Link>` or `<a>`) without invalid DOM nesting.
+* **Declarative Variants (`cva`)**: Powered by `class-variance-authority` for type-safe variants, size props, and compound styles.
+* **Dual-Cockpit Theming**: Native dark-first **Atomic Dark Mode** with full **Daylight Mode** counterpart, orchestrated via semantic CSS variables and Tailwind v4 `@theme`.
+
+---
+
+### Component Taxonomy
+
+1. **`src/components/ui/`**: Headless-backed primitives (`Button`, `Accordion`, `Input`, `Badge`, `Card`, etc.).
+2. **`src/components/blocks/`**: Assembled cards, auth screens, and dashboard widgets composed strictly from UI primitives.
+3. **`src/components/gen-ui/`**: AI SDK tool-call interface components (e.g. `CodeSandbox`, `PolarCheckoutCard`).
+
+---
+
+### Quick Start & Installation
+
+To install the foundational dependencies used by these components:
+
+```bash
+pnpm add class-variance-authority @radix-ui/react-slot @radix-ui/react-accordion clsx tailwind-merge lucide-react
+```
+
+Import utilities and components directly:
+
+```tsx
+import { Button } from '@/components/ui/button';
+import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
+
+export function DeploySection() {
+  return (
+    <Card>
+      <CardHeader>
+        <CardTitle>Deploy Sovereign Stack</CardTitle>
+      </CardHeader>
+      <CardContent>
+        <Button variant="glow">Launch Instance</Button>
+      </CardContent>
+    </Card>
+  );
+}
+```

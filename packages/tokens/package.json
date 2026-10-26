@@ -1,0 +1,45 @@
+{
+  "name": "@thatguycodes/tokens",
+  "version": "1.0.0",
+  "description": "Universal design tokens for thatguycodes design system across Web, iOS, and Android",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./colors": {
+      "import": "./dist/colors.js",
+      "types": "./dist/colors.d.ts",
+      "default": "./dist/colors.js"
+    },
+    "./radii": {
+      "import": "./dist/radii.js",
+      "types": "./dist/radii.d.ts",
+      "default": "./dist/radii.js"
+    },
+    "./shadows": {
+      "import": "./dist/shadows.js",
+      "types": "./dist/shadows.d.ts",
+      "default": "./dist/shadows.js"
+    },
+    "./typography": {
+      "import": "./dist/typography.js",
+      "types": "./dist/typography.d.ts",
+      "default": "./dist/typography.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  }
+}

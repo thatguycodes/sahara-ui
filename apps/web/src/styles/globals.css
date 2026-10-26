@@ -1,0 +1,468 @@
+@import "tailwindcss";
+
+@theme {
+  /* Atomic Dark Palette */
+  --color-atomic-black: #09090b;
+  --color-atomic-dark: #0c0c0f;
+  --color-atomic-surface: #121215;
+  --color-atomic-elevated: #18181b;
+  --color-atomic-highest: #1e1e22;
+  --color-atomic-border: #27272a;
+  --color-atomic-border-subtle: #1e1e24;
+  --color-atomic-border-light: #3f3f46;
+  --color-atomic-outline: #52525b;
+
+  --color-atomic-accent: #a78bfa;
+  --color-atomic-accent-hover: #c4b5fd;
+  --color-atomic-accent-deep: #7c3aed;
+  --color-atomic-accent-muted: rgba(167, 139, 250, 0.15);
+
+  /* Sahara Nocturne Suite Tokens (Stitch Screen 9bb2a99fdcc142a9903aa9bdf13857ee) */
+  --color-sahara-basalt: #161311;
+  --color-sahara-surface-lowest: #110d0c;
+  --color-sahara-surface: #231f1d;
+  --color-sahara-surface-high: #2e2927;
+  --color-sahara-surface-highest: #393431;
+  --color-sahara-amber: #e09f3e;
+  --color-sahara-amber-bright: #ffba56;
+  --color-sahara-terracotta: #c86d3b;
+  --color-sahara-terracotta-bright: #ffb59c;
+  --color-sahara-sandstone: #9e8e7d;
+  --color-sahara-sandstone-dark: #514536;
+
+  /* Aliases for compatibility */
+  --color-bit-black: #09090b;
+  --color-bit-dark: #0c0c0f;
+  --color-bit-surface: #121215;
+  --color-bit-elevated: #18181b;
+  --color-bit-border: #27272a;
+  --color-bit-accent: #a78bfa;
+
+  /* Legacy aliases for backward compatibility */
+  --color-obsidian-black: #09090b;
+  --color-obsidian-dark: #0c0c0f;
+  --color-obsidian-surface: #121215;
+  --color-obsidian-elevated: #18181b;
+  --color-obsidian-highest: #1e1e22;
+  --color-obsidian-border: #27272a;
+  --color-obsidian-accent: #a78bfa;
+
+  /* Daylight Mode Palette (Official Light Theme Counterpart) */
+  --color-daylight-bg: #faf8ff;
+  --color-daylight-surface: #ffffff;
+  --color-daylight-elevated: #f4f2fa;
+  --color-daylight-highest: #ede9f6;
+  --color-daylight-border: #e2def0;
+  --color-daylight-border-light: #ece7f6;
+  --color-daylight-outline: #cbd5e1;
+
+  --color-daylight-accent: #6d28d9;
+  --color-daylight-accent-hover: #5b21b6;
+  --color-daylight-accent-muted: rgba(109, 40, 217, 0.08);
+
+  --color-daylight-text-primary: #0f172a;
+  --color-daylight-text-secondary: #475569;
+  --color-daylight-text-muted: #64748b;
+
+  --color-daylight-emerald: #059669;
+  --color-daylight-amber: #d97706;
+  --color-daylight-crimson: #dc2626;
+
+  /* Sahara Solstice Light Mode Palette (Stitch Screen 9bb2a99fdcc142a9903aa9bdf13857ee) */
+  --color-sahara-solstice-bg: #fff8f5;
+  --color-sahara-solstice-surface: #ffffff;
+  --color-sahara-solstice-recessed: #faf2ee;
+  --color-sahara-solstice-dock: #f3e7e0;
+  --color-sahara-solstice-border: #efe3db;
+  --color-sahara-solstice-border-hairline: #eae0d8;
+  --color-sahara-solstice-terracotta: #c86d3b;
+  --color-sahara-solstice-terracotta-hover: #b55f2f;
+  --color-sahara-solstice-terracotta-tint: #fbece4;
+  --color-sahara-solstice-terracotta-pill: #fceee7;
+  --color-sahara-solstice-text-primary: #221b17;
+  --color-sahara-solstice-text-secondary: #705f55;
+  --color-sahara-solstice-text-muted: #917e73;
+  --color-sahara-solstice-code: #b45309;
+  --color-sahara-solstice-danger: #b3261e;
+
+  /* Telemetry / Signal Base */
+  --color-telemetry-emerald: #34d399;
+  --color-telemetry-emerald-bright: #6ee7b7;
+  --color-telemetry-emerald-dark: #065f46;
+
+  --color-signal-amber: #fbbf24;
+  --color-signal-crimson: #ef4444;
+
+  /* Semantic Dynamic Colors (Theme-driven) */
+  --color-bg-canvas: var(--bg-canvas);
+  --color-bg-surface: var(--bg-surface);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-bg-highest: var(--bg-highest);
+
+  /* shadcn/ui Standard Semantic Tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-border-base: var(--border-base);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-light: var(--border-light);
+  --color-border-focus: var(--border-focus);
+
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-muted: var(--accent-muted);
+  --color-accent-on-primary: var(--accent-on-primary);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+
+  --color-skeleton: var(--skeleton);
+  --color-skeleton-shimmer: var(--skeleton-shimmer);
+
+  --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
+
+  --radius: 0.5rem;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  --shadow-bevel: var(--shadow-bevel);
+  --shadow-glow-violet: var(--shadow-glow-violet);
+  --shadow-glow-emerald: var(--shadow-glow-emerald);
+  --shadow-hud: var(--shadow-hud);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from {
+    height: 0;
+  }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+/* ========================================================================= */
+/* CSS Variable Definitions for Theme Modes                                  */
+/* ========================================================================= */
+
+/* Root Default: Atomic Dark Mode (Sahara Nocturne Palette) */
+:root {
+  color-scheme: dark;
+
+  /* shadcn/ui Standard Variables */
+  --background: #161311;
+  --foreground: #eae1dd;
+  --card: #231f1d;
+  --card-foreground: #eae1dd;
+  --popover: #231f1d;
+  --popover-foreground: #eae1dd;
+  --primary: #ffba56;
+  --primary-foreground: #161311;
+  --secondary: #2e2927;
+  --secondary-foreground: #eae1dd;
+  --muted: #2e2927;
+  --muted-foreground: #9e8e7d;
+  --accent: #393431;
+  --accent-foreground: #ffba56;
+  --destructive: #ffb4ab;
+  --destructive-foreground: #450003;
+  --border: #514536;
+  --input: #514536;
+  --ring: #ffba56;
+  --radius: 0.5rem;
+
+  /* Canvas & Surfaces */
+  --bg-canvas: #161311;
+  --bg-surface: #1f1b19;
+  --bg-elevated: #231f1d;
+  --bg-highest: #2e2927;
+
+  /* Borders & Dividers */
+  --border-base: #514536;
+  --border-subtle: #393431;
+  --border-light: #9e8e7d;
+  --border-focus: #ffba56;
+
+  /* Accent & Brand (Amber & Terracotta Warm Radiance) */
+  --accent-primary: #ffba56;
+  --accent-hover: #ffca7a;
+  --accent-deep: #e09f3e;
+  --accent-muted: rgba(255, 186, 86, 0.15);
+  --accent-on-primary: #161311;
+
+  /* Typography */
+  --text-primary: #eae1dd;
+  --text-secondary: #d5c4b1;
+  --text-muted: #9e8e7d;
+
+  /* Telemetry / Status */
+  --telemetry-success: #34d399;
+  --telemetry-success-bg: rgba(6, 95, 70, 0.25);
+  --telemetry-success-border: rgba(52, 211, 153, 0.35);
+  --telemetry-warning: #ffba56;
+  --telemetry-warning-bg: rgba(224, 159, 62, 0.2);
+  --telemetry-warning-border: rgba(255, 186, 86, 0.35);
+  --telemetry-danger: #ffb4ab;
+  --telemetry-danger-bg: rgba(147, 0, 10, 0.3);
+  --telemetry-danger-border: rgba(255, 180, 171, 0.35);
+
+  /* Skeleton Loading Contrast Tokens */
+  --skeleton: #393431;
+  --skeleton-shimmer: #514536;
+
+  /* Aliases for Badges & Buttons */
+  --telemetry-emerald-bg: rgba(6, 95, 70, 0.25);
+  --telemetry-emerald-border: rgba(52, 211, 153, 0.35);
+  --telemetry-emerald-text: #34d399;
+  --status-warning-bg: rgba(224, 159, 62, 0.2);
+  --status-warning-border: rgba(255, 186, 86, 0.35);
+  --status-warning-text: #ffba56;
+  --status-danger-bg: rgba(147, 0, 10, 0.3);
+  --status-danger-border: rgba(255, 180, 171, 0.35);
+  --status-danger-text: #ffb4ab;
+
+  /* Shadows */
+  --shadow-bevel: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  --shadow-glow-violet: 0 0 20px -3px rgba(255, 186, 86, 0.35);
+  --shadow-glow-amber: 0 0 20px -3px rgba(255, 186, 86, 0.35);
+  --shadow-glow-terracotta: 0 0 20px -3px rgba(200, 109, 59, 0.35);
+  --shadow-glow-emerald: 0 0 18px -3px rgba(52, 211, 153, 0.35);
+  --shadow-hud: 0 24px 48px -12px rgba(0, 0, 0, 0.75), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+/* Explicit Dark Theme Class & Attribute (Sahara Nocturne Palette) */
+.dark,
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* shadcn/ui Standard Variables */
+  --background: #161311;
+  --foreground: #eae1dd;
+  --card: #231f1d;
+  --card-foreground: #eae1dd;
+  --popover: #231f1d;
+  --popover-foreground: #eae1dd;
+  --primary: #ffba56;
+  --primary-foreground: #161311;
+  --secondary: #2e2927;
+  --secondary-foreground: #eae1dd;
+  --muted: #2e2927;
+  --muted-foreground: #9e8e7d;
+  --accent: #393431;
+  --accent-foreground: #ffba56;
+  --destructive: #ffb4ab;
+  --destructive-foreground: #450003;
+  --border: #514536;
+  --input: #514536;
+  --ring: #ffba56;
+  --radius: 0.5rem;
+
+  /* Canvas & Surfaces */
+  --bg-canvas: #161311;
+  --bg-surface: #1f1b19;
+  --bg-elevated: #231f1d;
+  --bg-highest: #2e2927;
+
+  /* Borders & Dividers */
+  --border-base: #514536;
+  --border-subtle: #393431;
+  --border-light: #9e8e7d;
+  --border-focus: #ffba56;
+
+  /* Accent & Brand */
+  --accent-primary: #ffba56;
+  --accent-hover: #ffca7a;
+  --accent-deep: #e09f3e;
+  --accent-muted: rgba(255, 186, 86, 0.15);
+  --accent-on-primary: #161311;
+
+  /* Typography */
+  --text-primary: #eae1dd;
+  --text-secondary: #d5c4b1;
+  --text-muted: #9e8e7d;
+
+  /* Telemetry / Status */
+  --telemetry-success: #34d399;
+  --telemetry-success-bg: rgba(6, 95, 70, 0.25);
+  --telemetry-success-border: rgba(52, 211, 153, 0.35);
+  --telemetry-warning: #ffba56;
+  --telemetry-warning-bg: rgba(224, 159, 62, 0.2);
+  --telemetry-warning-border: rgba(255, 186, 86, 0.35);
+  --telemetry-danger: #ffb4ab;
+  --telemetry-danger-bg: rgba(147, 0, 10, 0.3);
+  --telemetry-danger-border: rgba(255, 180, 171, 0.35);
+
+  /* Skeleton Loading Contrast Tokens */
+  --skeleton: #393431;
+  --skeleton-shimmer: #514536;
+
+  /* Aliases for Badges & Buttons */
+  --telemetry-emerald-bg: rgba(6, 95, 70, 0.25);
+  --telemetry-emerald-border: rgba(52, 211, 153, 0.35);
+  --telemetry-emerald-text: #34d399;
+  --status-warning-bg: rgba(224, 159, 62, 0.2);
+  --status-warning-border: rgba(255, 186, 86, 0.35);
+  --status-warning-text: #ffba56;
+  --status-danger-bg: rgba(147, 0, 10, 0.3);
+  --status-danger-border: rgba(255, 180, 171, 0.35);
+  --status-danger-text: #ffb4ab;
+
+  /* Shadows */
+  --shadow-bevel: inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  --shadow-glow-violet: 0 0 20px -3px rgba(255, 186, 86, 0.35);
+  --shadow-glow-amber: 0 0 20px -3px rgba(255, 186, 86, 0.35);
+  --shadow-glow-terracotta: 0 0 20px -3px rgba(200, 109, 59, 0.35);
+  --shadow-glow-emerald: 0 0 18px -3px rgba(52, 211, 153, 0.35);
+  --shadow-hud: 0 24px 48px -12px rgba(0, 0, 0, 0.75), inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+}
+
+/* Light Theme: Sahara Solstice Mode (Activated via .light or [data-theme="light"]) */
+.light,
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* shadcn/ui Standard Variables */
+  --background: #fff8f5;
+  --foreground: #221b17;
+  --card: #ffffff;
+  --card-foreground: #221b17;
+  --popover: #ffffff;
+  --popover-foreground: #221b17;
+  --primary: #c86d3b;
+  --primary-foreground: #ffffff;
+  --secondary: #faf2ee;
+  --secondary-foreground: #221b17;
+  --muted: #f3e7e0;
+  --muted-foreground: #705f55;
+  --accent: #fceee7;
+  --accent-foreground: #c86d3b;
+  --destructive: #b3261e;
+  --destructive-foreground: #ffffff;
+  --border: #efe3db;
+  --input: #efe3db;
+  --ring: #c86d3b;
+  --radius: 0.5rem;
+
+  /* Canvas & Surfaces */
+  --bg-canvas: #fff8f5;
+  --bg-surface: #ffffff;
+  --bg-elevated: #faf2ee;
+  --bg-highest: #f3e7e0;
+
+  /* Borders & Dividers */
+  --border-base: #efe3db;
+  --border-subtle: #eae0d8;
+  --border-light: #dfd2c8;
+  --border-focus: #c86d3b;
+
+  /* Accent & Brand (Terracotta #C86D3B) */
+  --accent-primary: #c86d3b;
+  --accent-hover: #b55f2f;
+  --accent-deep: #852a03;
+  --accent-muted: #fbece4;
+  --accent-on-primary: #ffffff;
+
+  /* Typography */
+  --text-primary: #221b17;
+  --text-secondary: #705f55;
+  --text-muted: #917e73;
+
+  /* Telemetry / Status */
+  --telemetry-success: #059669;
+  --telemetry-success-bg: #ecfdf5;
+  --telemetry-success-border: #a7f3d0;
+  --telemetry-warning: #e09f3e;
+  --telemetry-warning-bg: #fffbeb;
+  --telemetry-warning-border: #fde68a;
+  --telemetry-danger: #b3261e;
+  --telemetry-danger-bg: #fbeae9;
+  --telemetry-danger-border: #fecaca;
+
+  /* Skeleton Loading Contrast Tokens */
+  --skeleton: #eae0d8;
+  --skeleton-shimmer: #dfd2c8;
+
+  /* Aliases for Badges & Buttons */
+  --telemetry-emerald-bg: #ecfdf5;
+  --telemetry-emerald-border: #a7f3d0;
+  --telemetry-emerald-text: #059669;
+  --status-warning-bg: #fffbeb;
+  --status-warning-border: #fde68a;
+  --status-warning-text: #d97706;
+  --status-danger-bg: #fbeae9;
+  --status-danger-border: #fecaca;
+  --status-danger-text: #b3261e;
+
+  /* Shadows */
+  --shadow-bevel: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-glow-violet: 0 4px 14px 0 rgba(200, 109, 59, 0.25);
+  --shadow-glow-amber: 0 4px 14px 0 rgba(224, 159, 62, 0.25);
+  --shadow-glow-terracotta: 0 4px 14px 0 rgba(200, 109, 59, 0.25);
+  --shadow-glow-emerald: 0 4px 14px 0 rgba(5, 150, 105, 0.20);
+  --shadow-hud: 0 10px 25px -5px rgba(34, 27, 23, 0.08), 0 8px 10px -6px rgba(34, 27, 23, 0.04);
+
+  background-color: var(--bg-canvas);
+  color: var(--text-primary);
+}
+
+/* Custom Scrollbar for Code and Cockpit */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(161, 161, 170, 0.2);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(161, 161, 170, 0.35);
+}
+
+/* Tabular numbers for telemetry & code */
+code, kbd, samp, pre, .font-mono {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}

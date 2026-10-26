@@ -1,0 +1,58 @@
+{
+  "name": "@thatguycodes/ui-native",
+  "version": "1.0.0",
+  "description": "Cross-platform React Native design system components for iOS and Android",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./components/*": {
+      "import": "./dist/components/*",
+      "types": "./dist/components/*",
+      "default": "./dist/components/*"
+    },
+    "./blocks/*": {
+      "import": "./dist/blocks/*",
+      "types": "./dist/blocks/*",
+      "default": "./dist/blocks/*"
+    },
+    "./lib/*": {
+      "import": "./dist/lib/*",
+      "types": "./dist/lib/*",
+      "default": "./dist/lib/*"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@thatguycodes/tokens": "workspace:*",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.7.0"
+  },
+  "peerDependencies": {
+    "lucide-react-native": "*",
+    "nativewind": "^4.0.1",
+    "react": "*",
+    "react-native": "*",
+    "react-native-svg": "*"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.0 || ^19.0.0",
+    "@types/react-native": "^0.73.0",
+    "lucide-react-native": "^0.475.0",
+    "react-native": "0.76.7",
+    "react-native-svg": "^15.9.0",
+    "typescript": "^5.7.0"
+  }
+}

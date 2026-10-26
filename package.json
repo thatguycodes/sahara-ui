@@ -1,0 +1,29 @@
+{
+  "name": "thatguycodes-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "yarn@4.6.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "nx": "nx",
+    "build": "nx run-many -t build",
+    "typecheck": "nx run-many -t typecheck",
+    "dev:web": "nx dev web",
+    "build:web": "nx build web",
+    "preview:web": "nx preview web",
+    "dev:mobile": "nx start mobile",
+    "mobile:ios": "nx ios mobile",
+    "mobile:android": "nx android mobile",
+    "build:tokens": "nx typecheck @thatguycodes/tokens",
+    "graph": "nx graph"
+  },
+  "devDependencies": {
+    "@nx/js": "^24.0.1",
+    "@nx/workspace": "^24.0.1",
+    "nx": "^24.0.1",
+    "typescript": "^5.7.0"
+  }
+}

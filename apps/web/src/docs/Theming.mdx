@@ -1,0 +1,48 @@
+import { Meta } from '@storybook/blocks';
+
+<Meta title="Documentation/Theming" />
+
+# Theming & Color Tokens
+
+The design system uses standard semantic CSS variables compatible with the **shadcn/ui** design engine, mapped across two tuned modes:
+
+1. **Atomic Dark Mode (Sahara Nocturne)**: Deep mineral basalt `#161311` canvas with charred mineral containers (`#231f1d`), golden amber radiance (`#ffba56`), sunbaked terracotta accents (`#c86d3b`), and sandstone hairline strokes (`#514536`).
+2. **Daylight Mode (Sahara Solstice Light Theme)**: Bleached sandstone daylight warmth `#FFF8F5` canvas with pure white elevated cards (`#FFFFFF`), recessed sandstone trays (`#FAF2EE`), dock trays (`#F3E7E0`), and WCAG AAA compliant Terracotta (`#C86D3B`).
+
+---
+
+### Semantic Token Architecture
+
+All components consume semantic Tailwind utility classes (`bg-background`, `text-foreground`, `border-border`, `bg-card`, `bg-primary`, `bg-secondary`, `bg-muted`, etc.) which map directly to CSS variables:
+
+| Utility Token | Sahara Nocturne (Dark) | Sahara Solstice (Light) | Purpose |
+| :--- | :--- | :--- | :--- |
+| `bg-background` | `#161311` | `#fff8f5` | Primary viewport backdrop |
+| `text-foreground` | `#eae1dd` | `#221b17` | Primary typography color |
+| `bg-card` | `#231f1d` | `#ffffff` | Elevated card & modal surfaces |
+| `border-border` | `#514536` | `#efe3db` | Structural dividers & borders |
+| `bg-primary` | `#ffba56` | `#c86d3b` | Primary action & brand highlight |
+| `text-primary-foreground` | `#161311` | `#ffffff` | High-contrast text on primary |
+| `bg-secondary` | `#2e2927` | `#faf2ee` | Secondary button & recessed fills |
+| `text-muted-foreground` | `#9e8e7d` | `#705f55` | Subtitles, labels, and icons |
+| `ring-ring` | `#ffba56` | `#c86d3b` | Keyboard focus indicator ring |
+
+---
+
+### Toggling Themes
+
+Switch themes at runtime by applying the `dark` or `light` class (or `data-theme="dark"` / `data-theme="light"`) to your `<html>` or container element:
+
+```tsx
+// Switch to Daylight Mode
+document.documentElement.classList.remove('dark');
+document.documentElement.classList.add('light');
+document.documentElement.setAttribute('data-theme', 'light');
+
+// Switch to Atomic Dark Mode
+document.documentElement.classList.remove('light');
+document.documentElement.classList.add('dark');
+document.documentElement.setAttribute('data-theme', 'dark');
+```
+
+In Storybook, you can toggle between both themes instantly using the **Theme icon in the toolbar**.

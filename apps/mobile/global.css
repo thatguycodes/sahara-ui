@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #161311;
+    --foreground: #eae1dd;
+    --card: #231f1d;
+    --card-foreground: #eae1dd;
+    --popover: #231f1d;
+    --popover-foreground: #eae1dd;
+    --primary: #ffba56;
+    --primary-foreground: #161311;
+    --secondary: #2e2927;
+    --secondary-foreground: #eae1dd;
+    --muted: #2e2927;
+    --muted-foreground: #9e8e7d;
+    --accent: #393431;
+    --accent-foreground: #ffba56;
+    --destructive: #ffb4ab;
+    --destructive-foreground: #450003;
+    --border: #514536;
+    --input: #514536;
+    --ring: #ffba56;
+  }
+
+  .dark {
+    --background: #161311;
+    --foreground: #eae1dd;
+    --card: #231f1d;
+    --card-foreground: #eae1dd;
+    --popover: #231f1d;
+    --popover-foreground: #eae1dd;
+    --primary: #ffba56;
+    --primary-foreground: #161311;
+    --secondary: #2e2927;
+    --secondary-foreground: #eae1dd;
+    --muted: #2e2927;
+    --muted-foreground: #9e8e7d;
+    --accent: #393431;
+    --accent-foreground: #ffba56;
+    --destructive: #ffb4ab;
+    --destructive-foreground: #450003;
+    --border: #514536;
+    --input: #514536;
+    --ring: #ffba56;
+  }
+
+  .light {
+    --background: #fff8f5;
+    --foreground: #221b17;
+    --card: #ffffff;
+    --card-foreground: #221b17;
+    --popover: #ffffff;
+    --popover-foreground: #221b17;
+    --primary: #c86d3b;
+    --primary-foreground: #ffffff;
+    --secondary: #faf2ee;
+    --secondary-foreground: #221b17;
+    --muted: #f3e7e0;
+    --muted-foreground: #705f55;
+    --accent: #fceee7;
+    --accent-foreground: #c86d3b;
+    --destructive: #b3261e;
+    --destructive-foreground: #ffffff;
+    --border: #efe3db;
+    --input: #efe3db;
+    --ring: #c86d3b;
+  }
+}

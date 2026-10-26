@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_blank" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100%;min-height:100%;margin:0;padding:0;background-color:#09090b;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-dim": "#0c0c0f", "secondary": "#71717a", "primary-fixed": "#ede9fe", "on-primary-container": "#ede9fe", "surface-container-lowest": "#09090b", "secondary-container": "#27272a", "on-surface-variant": "#a1a1aa", "on-tertiary-fixed": "#003318", "inverse-primary": "#5b21b6", "surface-container-low": "#0f0f12", "on-secondary-fixed": "#18181b", "surface-bright": "#18181b", "surface": "#0c0c0f", "background": "#09090b", "on-error-container": "#fca5a5", "surface-container": "#121215", "primary-fixed-dim": "#c4b5fd", "outline": "#52525b", "inverse-on-surface": "#09090b", "error": "#ef4444", "error-container": "#3b1111", "surface-container-high": "#18181b", "tertiary-fixed": "#bbf7d0", "surface-container-highest": "#1e1e22", "primary": "#a78bfa", "secondary-fixed": "#a1a1aa", "inverse-surface": "#fafafa", "primary-container": "#7c3aed", "on-background": "#fafafa", "surface-variant": "#18181b", "tertiary-fixed-dim": "#6ee7b7", "surface-tint": "#a78bfa", "on-surface": "#fafafa", "on-primary-fixed": "#2e1065", "on-tertiary": "#001a12", "on-error": "#1a0000", "on-secondary": "#09090b", "on-primary-fixed-variant": "#5b21b6", "on-secondary-container": "#a1a1aa", "tertiary-container": "#065f46", "on-primary": "#0a0012", "outline-variant": "#27272a", "tertiary": "#34d399", "secondary-fixed-dim": "#71717a", "on-secondary-fixed-variant": "#3f3f46", "on-tertiary-container": "#bbf7d0", "on-tertiary-fixed-variant": "#047857" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, fontFamily: { "headline": ["Geist", "sans-serif"], "display": ["Geist", "sans-serif"], "body": ["Geist", "sans-serif"], "label": ["Geist", "sans-serif"] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-background text-on-surface font-body antialiased flex flex-col min-h-screen"><main class="flex-1 flex flex-col relative w-full bg-background pt-safe pb-safe"><div class="flex flex-col w-full px-4 py-6 max-w-md mx-auto transition-colors duration-300" id="auth-root-container">
+<!-- Top Utility Bar: System Status & Theme Switcher -->
+<div class="flex items-center justify-between w-full mb-8">
+<div class="flex items-center space-x-2 bg-surface-container px-2.5 py-1 rounded-full text-xs text-on-surface-variant font-medium select-none">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+<span class="tracking-wide">v1.6.4 • Vault Sync OK</span>
+</div>
+<!-- Interactive Mode Toggle (Obsidian Dark vs Obsidian Daylight) -->
+<div class="flex items-center p-0.5 bg-surface-container rounded-full" id="theme-toggle-group">
+<button class="flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-medium text-on-surface bg-surface-container-highest transition-all duration-200" id="mode-dark-btn" onclick="setThemeMode('dark')" type="button">
+<span class="material-symbols-outlined text-[14px]">dark_mode</span>
+<span>Dark</span>
+</button>
+<button class="flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-medium text-on-surface-variant hover:text-on-surface transition-all duration-200" id="mode-light-btn" onclick="setThemeMode('light')" type="button">
+<span class="material-symbols-outlined text-[14px]">light_mode</span>
+<span>Daylight</span>
+</button>
+</div>
+</div>
+<!-- Obsidian Brand Identity & Header -->
+<div class="flex flex-col items-center text-center mb-8">
+<!-- Obsidian Faceted Crystal Icon -->
+<div class="relative w-14 h-14 mb-4 flex items-center justify-center rounded-xl bg-surface-container-high transition-transform duration-300 hover:scale-105" id="brand-crystal-wrapper">
+<svg class="w-8 h-8 text-primary transition-colors duration-300" fill="none" id="brand-crystal-svg" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4L9 16L14 36L24 44L34 36L39 16L24 4Z" fill="currentColor" fill-opacity="0.18"></path>
+<path d="M24 4L14 36M24 4L34 36M24 4V44M9 16L39 16M14 36L34 36M9 16L24 44M39 16L24 44" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<div class="absolute -bottom-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-surface-container-highest">
+<span class="material-symbols-outlined text-primary text-[10px]" style="font-variation-settings: 'FILL' 1;">lock</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2 py-0.5 mb-2 rounded bg-surface-container-high text-[11px] font-mono uppercase tracking-wider text-primary font-semibold">
+<span>Obsidian Sync &amp; Vaults</span>
+</div>
+<h1 class="text-2xl font-bold tracking-tight text-on-surface mb-2 font-headline" id="main-title">
+      Sign in with Phone
+    </h1>
+<p class="text-xs text-on-surface-variant max-w-xs leading-relaxed" id="main-subtitle">
+      Enter your verified mobile phone number to receive a secure hardware-level token code.
+    </p>
+</div>
+<!-- Primary Interactive Flow: Step 1 (Phone Input) & Step 2 (OTP Entry) -->
+<div class="w-full bg-surface-container p-5 rounded-xl shadow-md transition-all duration-300" id="auth-card">
+<!-- STEP 1: Phone Entry Form -->
+<form class="space-y-4" id="phone-form" onsubmit="event.preventDefault(); goToStep(2);">
+<div>
+<label class="block text-xs font-medium text-on-surface-variant mb-1.5">Mobile Phone Number</label>
+<div class="flex items-center rounded-lg bg-surface-container-lowest focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 focus-within:ring-offset-surface transition-all">
+<!-- Country Prefix Selector Modal/Dropdown Trigger -->
+<button class="flex items-center space-x-1.5 px-3 py-2.5 text-xs font-mono text-on-surface hover:bg-surface-container-high rounded-l-lg transition-colors shrink-0" id="country-selector-btn" onclick="toggleCountryDropdown()" type="button">
+<span class="text-base leading-none">🇺🇸</span>
+<span class="font-medium" id="selected-country-code">+1</span>
+<span class="material-symbols-outlined text-[14px] text-on-surface-variant transition-transform" id="chevron-icon">expand_more</span>
+</button>
+<div class="h-4 w-px bg-surface-container-highest"></div>
+<!-- Main Input Field -->
+<input class="w-full bg-transparent px-3 py-2.5 text-sm text-on-surface placeholder:text-secondary focus:outline-none font-mono" id="phone-input" maxlength="14" oninput="formatPhoneNumber(this)" placeholder="(555) 234-5678" required="" type="tel"/>
+</div>
+<!-- Inline Country Dropdown Drawer (Collapsible) -->
+<div class="hidden mt-2 p-1.5 bg-surface-container-high rounded-lg text-xs space-y-1 max-h-36 overflow-y-auto" id="country-dropdown">
+<div class="flex items-center justify-between p-2 rounded hover:bg-surface cursor-pointer text-on-surface" onclick="selectCountry('+1', '🇺🇸', 'US')">
+<span>🇺🇸 United States / Canada</span>
+<span class="font-mono text-on-surface-variant">+1</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded hover:bg-surface cursor-pointer text-on-surface" onclick="selectCountry('+44', '🇬🇧', 'UK')">
+<span>🇬🇧 United Kingdom</span>
+<span class="font-mono text-on-surface-variant">+44</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded hover:bg-surface cursor-pointer text-on-surface" onclick="selectCountry('+49', '🇩🇪', 'DE')">
+<span>🇩🇪 Germany</span>
+<span class="font-mono text-on-surface-variant">+49</span>
+</div>
+<div class="flex items-center justify-between p-2 rounded hover:bg-surface cursor-pointer text-on-surface" onclick="selectCountry('+81', '🇯🇵', 'JP')">
+<span>🇯🇵 Japan</span>
+<span class="font-mono text-on-surface-variant">+81</span>
+</div>
+</div>
+</div>
+<!-- Remember Device Checkbox -->
+<div class="flex items-center justify-between py-1">
+<label class="flex items-center space-x-2.5 cursor-pointer select-none">
+<input checked="" class="w-4 h-4 rounded text-primary bg-surface-container-lowest focus:ring-primary focus:ring-offset-0 cursor-pointer accent-primary" id="remember-me" type="checkbox"/>
+<span class="text-xs text-on-surface-variant">Remember device for 30 days</span>
+</label>
+<div class="flex items-center space-x-1 text-on-surface-variant text-[11px]" title="Hardware-bound security token saved locally">
+<span class="material-symbols-outlined text-[13px]">shield</span>
+</div>
+</div>
+<!-- Submit CTA -->
+<button class="w-full py-2.5 px-4 rounded-lg bg-primary text-on-primary font-medium text-xs tracking-wide shadow-sm hover:opacity-90 active:scale-[0.99] transition-all flex items-center justify-center space-x-2" type="submit">
+<span>Send Verification Code</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</form>
+<!-- STEP 2: Monospace OTP Entry (Toggled via JS) -->
+<div class="hidden space-y-4" id="otp-section">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-xs font-semibold text-on-surface block">Enter 6-Digit Passcode</span>
+<span class="text-[11px] text-on-surface-variant" id="otp-sent-label">Sent to +1 (555) 234-5678</span>
+</div>
+<button class="text-xs text-primary hover:underline font-mono" onclick="goToStep(1)" type="button">
+          Edit
+        </button>
+</div>
+<!-- Monospace Numeric Blocks -->
+<div class="flex items-center justify-between gap-1.5" id="otp-boxes-container">
+<input autofocus="" class="otp-digit w-10 h-11 text-center font-mono text-base font-bold bg-surface-container-lowest text-on-surface rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" inputmode="numeric" maxlength="1" oninput="handleOtpInput(this, 0)" onkeydown="handleOtpBackspace(this, event, 0)" type="text" value="7"/>
+<input class="otp-digit w-10 h-11 text-center font-mono text-base font-bold bg-surface-container-lowest text-on-surface rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" inputmode="numeric" maxlength="1" oninput="handleOtpInput(this, 1)" onkeydown="handleOtpBackspace(this, event, 1)" type="text" value="2"/>
+<input class="otp-digit w-10 h-11 text-center font-mono text-base font-bold bg-surface-container-lowest text-on-surface rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" inputmode="numeric" maxlength="1" oninput="handleOtpInput(this, 2)" onkeydown="handleOtpBackspace(this, event, 2)" type="text" value="8"/>
+<input class="otp-digit w-10 h-11 text-center font-mono text-base font-bold bg-surface-container-lowest text-on-surface rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" inputmode="numeric" maxlength="1" oninput="handleOtpInput(this, 3)" onkeydown="handleOtpBackspace(this, event, 3)" type="text"/>
+<input class="otp-digit w-10 h-11 text-center font-mono text-base font-bold bg-surface-container-lowest text-on-surface rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" inputmode="numeric" maxlength="1" oninput="handleOtpInput(this, 4)" onkeydown="handleOtpBackspace(this, event, 4)" type="text"/>
+<input class="otp-digit w-10 h-11 text-center font-mono text-base font-bold bg-surface-container-lowest text-on-surface rounded-lg focus:ring-2 focus:ring-primary focus:outline-none" inputmode="numeric" maxlength="1" oninput="handleOtpInput(this, 5)" onkeydown="handleOtpBackspace(this, event, 5)" type="text"/>
+</div>
+<!-- Resend Timer -->
+<div class="flex items-center justify-between text-xs text-on-surface-variant font-mono">
+<div class="flex items-center space-x-1">
+<span class="material-symbols-outlined text-[14px]">timer</span>
+<span id="countdown-timer">Resend SMS in 00:48</span>
+</div>
+<button class="text-secondary opacity-60 cursor-not-allowed" disabled="" id="resend-action" type="button">
+          Resend Code
+        </button>
+</div>
+<!-- Authenticate Action -->
+<button class="w-full py-2.5 px-4 rounded-lg bg-primary text-on-primary font-medium text-xs tracking-wide shadow-sm hover:opacity-90 active:scale-[0.99] transition-all flex items-center justify-center space-x-2" onclick="simulateSuccessVerification()" type="button">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span>Verify &amp; Unlock Vault</span>
+</button>
+</div>
+</div>
+<!-- Alternative Authentication Options -->
+<div class="w-full mt-6 space-y-3">
+<div class="relative flex items-center justify-center">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full h-px bg-surface-container-high"></div>
+</div>
+<span class="relative px-3 bg-background text-[11px] font-mono text-secondary uppercase tracking-widest">
+        or continue with
+      </span>
+</div>
+<div class="grid grid-cols-2 gap-2.5">
+<button class="flex items-center justify-center space-x-2 py-2 px-3 rounded-lg bg-surface-container text-xs font-medium text-on-surface hover:bg-surface-container-high transition-colors text-center truncate" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary shrink-0">pin</span>
+<span class="truncate">Authenticator OTP</span>
+</button>
+<button class="flex items-center justify-center space-x-2 py-2 px-3 rounded-lg bg-surface-container text-xs font-medium text-on-surface hover:bg-surface-container-high transition-colors text-center truncate" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary shrink-0">key</span>
+<span class="truncate">Master Password</span>
+</button>
+</div>
+</div>
+<!-- Security & Cryptographic Footnote -->
+<div class="mt-8 pt-4 flex flex-col items-center text-center space-y-2">
+<div class="flex items-center space-x-1.5 text-xs text-tertiary font-mono">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">enhanced_encryption</span>
+<span class="tracking-tight">Zero-Knowledge Vault Protocol</span>
+</div>
+<p class="text-[11px] text-on-surface-variant leading-relaxed max-w-xs font-body">
+      End-to-end encrypted vault authentication. Your phone number is strictly utilized for multi-factor verification and is never linked to vault contents.
+    </p>
+<!-- Quick switch between multi-vault profiles -->
+<div class="pt-2 flex items-center space-x-4 text-[11px] text-secondary">
+<a class="hover:text-primary transition-colors" href="javascript:void(0)">Vault Security Policy</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="javascript:void(0)">Recover via Master Key</a>
+</div>
+</div>
+</div>
+<!-- Client-side Interactive Theme Switcher & Phone Form Script -->
+<script>
+  // Theme Switching Logic
+  function setThemeMode(mode) {
+    const root = document.getElementById('auth-root-container');
+    const darkBtn = document.getElementById('mode-dark-btn');
+    const lightBtn = document.getElementById('mode-light-btn');
+    const card = document.getElementById('auth-card');
+    const crystal = document.getElementById('brand-crystal-wrapper');
+
+    if (mode === 'light') {
+      // Daylight palette: #FAF8FF, #FFFFFF, Violet #6D28D9
+      root.style.backgroundColor = '#FAF8FF';
+      root.style.color = '#18181B';
+      card.style.backgroundColor = '#FFFFFF';
+      card.style.boxShadow = '0 10px 25px -5px rgba(109, 40, 217, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04)';
+      crystal.style.backgroundColor = '#F3EEFF';
+      
+      lightBtn.classList.remove('text-on-surface-variant');
+      lightBtn.classList.add('bg-white', 'text-[#6D28D9]', 'shadow-sm');
+      darkBtn.classList.remove('bg-surface-container-highest', 'text-on-surface');
+      darkBtn.classList.add('text-secondary');
+    } else {
+      // Obsidian Dark default
+      root.style.backgroundColor = '';
+      root.style.color = '';
+      card.style.backgroundColor = '';
+      card.style.boxShadow = '';
+      crystal.style.backgroundColor = '';
+      
+      darkBtn.classList.add('bg-surface-container-highest', 'text-on-surface');
+      darkBtn.classList.remove('text-secondary');
+      lightBtn.classList.remove('bg-white', 'text-[#6D28D9]', 'shadow-sm');
+      lightBtn.classList.add('text-on-surface-variant');
+    }
+  }
+
+  // Country code handler
+  function toggleCountryDropdown() {
+    const menu = document.getElementById('country-dropdown');
+    const icon = document.getElementById('chevron-icon');
+    const isOpen = !menu.classList.contains('hidden');
+    if (isOpen) {
+      menu.classList.add('hidden');
+      icon.style.transform = 'rotate(0deg)';
+    } else {
+      menu.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    }
+  }
+
+  function selectCountry(dialCode, flag, code) {
+    document.getElementById('selected-country-code').textContent = dialCode;
+    const btn = document.getElementById('country-selector-btn');
+    btn.firstElementChild.textContent = flag;
+    toggleCountryDropdown();
+  }
+
+  // Format Phone Helper: (555) 234-5678
+  function formatPhoneNumber(input) {
+    let raw = input.value.replace(/\D/g, '');
+    if (raw.length > 10) raw = raw.substring(0, 10);
+    
+    let formatted = '';
+    if (raw.length > 0) {
+      formatted = '(' + raw.substring(0, 3);
+    }
+    if (raw.length >= 4) {
+      formatted += ') ' + raw.substring(3, 6);
+    }
+    if (raw.length >= 7) {
+      formatted += '-' + raw.substring(6, 10);
+    }
+    input.value = formatted;
+  }
+
+  // Multi-step Flow Controls
+  function goToStep(stepNumber) {
+    const form = document.getElementById('phone-form');
+    const otp = document.getElementById('otp-section');
+    const title = document.getElementById('main-title');
+    const subtitle = document.getElementById('main-subtitle');
+    const phoneInput = document.getElementById('phone-input');
+    const prefix = document.getElementById('selected-country-code').innerText;
+
+    if (stepNumber === 2) {
+      form.classList.add('hidden');
+      otp.classList.remove('hidden');
+      title.innerText = 'Verify Security Code';
+      subtitle.innerText = 'A single-use verification token has been transmitted to your mobile hardware.';
+      const phoneDisplay = phoneInput.value.trim() ? phoneInput.value : '(555) 234-5678';
+      document.getElementById('otp-sent-label').innerText = 'Sent to ' + prefix + ' ' + phoneDisplay;
+      
+      const firstBox = document.querySelectorAll('.otp-digit')[3];
+      if (firstBox) firstBox.focus();
+    } else {
+      otp.classList.add('hidden');
+      form.classList.remove('hidden');
+      title.innerText = 'Sign in with Phone';
+      subtitle.innerText = 'Enter your verified mobile phone number to receive a secure hardware-level token code.';
+    }
+  }
+
+  // Monospace 6-Digit input auto-focus handling
+  function handleOtpInput(el, index) {
+    el.value = el.value.replace(/\D/g, '');
+    const inputs = document.querySelectorAll('.otp-digit');
+    if (el.value.length >= 1 && index < inputs.length - 1) {
+      inputs[index + 1].focus();
+    }
+  }
+
+  function handleOtpBackspace(el, evt, index) {
+    const inputs = document.querySelectorAll('.otp-digit');
+    if (evt.key === 'Backspace' && !el.value && index > 0) {
+      inputs[index - 1].focus();
+    }
+  }
+
+  function simulateSuccessVerification() {
+    const title = document.getElementById('main-title');
+    title.innerText = 'Vault Unlocked';
+    const subtitle = document.getElementById('main-subtitle');
+    subtitle.innerText = 'Synchronizing cryptographic tree with Obsidian Core...';
+    const card = document.getElementById('auth-card');
+    card.innerHTML = `
+      <div class="py-8 flex flex-col items-center justify-center text-center space-y-3">
+        <div class="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center text-tertiary">
+          <span class="material-symbols-outlined text-2xl">check_circle</span>
+        </div>
+        <div class="font-bold text-sm text-on-surface">Verification Succeeded</div>
+        <p class="text-xs text-on-surface-variant max-w-xs font-mono">Decryption key retrieved. Access granted to local and remote sync partitions.</p>
+        <div class="w-full bg-surface-container-highest h-1 rounded-full overflow-hidden mt-2">
+          <div class="bg-primary h-full w-full animate-pulse"></div>
+        </div>
+      </div>
+    `;
+  }
+</script></main></body></html>

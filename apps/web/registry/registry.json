@@ -1,0 +1,108 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "thatguycodes",
+  "homepage": "https://thatguycodes.com",
+  "items": [
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "Button",
+      "description": "Obsidian/Daylight velocity button with high-contrast variants, active press physics, and luminous glow states.",
+      "dependencies": ["@radix-ui/react-slot", "class-variance-authority", "lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "Accordion",
+      "description": "High-density technical accordion with chevron transition, status badges, and bordered/flush/elevated variants.",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "src/components/ui/accordion.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "Badge",
+      "description": "Monospaced telemetry badge with pulsing beacons for live system status, $0/mo verification, and HITL alerts.",
+      "dependencies": ["class-variance-authority"],
+      "files": [
+        {
+          "path": "src/components/ui/badge.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "Input",
+      "description": "Obsidian command search and text input with keyboard shortcut tags (Cmd+K) and error states.",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "phone-input",
+      "type": "registry:ui",
+      "title": "Phone Input",
+      "description": "Obsidian mobile phone sign-in card with international dial code selector.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "src/components/ui/phone-input.tsx",
+          "type": "registry:ui",
+          "target": "components/ui/phone-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "code-sandbox",
+      "type": "registry:ui",
+      "title": "Code Sandbox",
+      "description": "Generative UI code dock with language badge, copy feedback, and interactive sandbox execution trigger.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["badge", "button"],
+      "files": [
+        {
+          "path": "src/components/gen-ui/code-sandbox.tsx",
+          "type": "registry:ui",
+          "target": "components/gen-ui/code-sandbox.tsx"
+        }
+      ]
+    },
+    {
+      "name": "polar-checkout-card",
+      "type": "registry:ui",
+      "title": "Polar Checkout Card",
+      "description": "Commerce value ladder card with automated GitHub private repo pull access guarantee and direct checkout trigger.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["badge", "button"],
+      "files": [
+        {
+          "path": "src/components/gen-ui/polar-checkout-card.tsx",
+          "type": "registry:ui",
+          "target": "components/gen-ui/polar-checkout-card.tsx"
+        }
+      ]
+    }
+  ]
+}
