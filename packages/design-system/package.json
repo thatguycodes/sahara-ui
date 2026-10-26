@@ -1,7 +1,27 @@
 {
   "name": "@thatguycodes/design-system",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official cross-platform design system for ThatGuyCodes across Web (React), Mobile (React Native / Expo), and Universal Tokens",
+  "license": "MIT",
+  "homepage": "https://thatguycodes.github.io/thatguycodes/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thatguycodes/thatguycodes.git",
+    "directory": "packages/design-system"
+  },
+  "bugs": {
+    "url": "https://github.com/thatguycodes/thatguycodes/issues"
+  },
+  "keywords": [
+    "design-system",
+    "react",
+    "react-native",
+    "expo",
+    "tailwind",
+    "radix-ui",
+    "tokens",
+    "thatguycodes"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

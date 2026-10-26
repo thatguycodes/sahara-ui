@@ -14,6 +14,7 @@ import {
   Info,
   AlertTriangle,
   MoreVertical,
+  ExternalLink,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -271,6 +272,26 @@ export default function App() {
             </div>
 
             <div className="flex items-center gap-3">
+              <a
+                href="https://www.npmjs.com/package/@thatguycodes/design-system"
+                target="_blank"
+                rel="noreferrer"
+                className="hidden sm:flex items-center gap-1.5 text-xs font-mono px-2.5 py-1 rounded-md border border-border bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <span>npm v1.0.1</span>
+                <ExternalLink className="w-3 h-3 opacity-60" />
+              </a>
+
+              <a
+                href="https://github.com/thatguycodes/thatguycodes"
+                target="_blank"
+                rel="noreferrer"
+                className="hidden sm:flex items-center gap-1.5 text-xs font-mono px-2.5 py-1 rounded-md border border-border bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <span>GitHub</span>
+                <ExternalLink className="w-3 h-3 opacity-60" />
+              </a>
+
               <div className="hidden md:flex items-center gap-2">
                 <Input
                   placeholder="Search 35+ components..."
