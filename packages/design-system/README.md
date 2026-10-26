@@ -178,14 +178,14 @@ console.log(radii.md);                     // "0.5rem"
 ## 🧩 Complete Component Catalog
 
 ### Web Components (`@thatguycodes/design-system/web`)
-| Category | Components |
-| :--- | :--- |
-| **Actions** | `Button`, `Toggle`, `ToggleGroup` |
-| **Forms** | `Input`, `Textarea`, `Checkbox`, `Switch`, `Slider`, `RadioGroup`, `Select`, `PhoneInput` |
-| **Containers & Surfaces** | `Card`, `CardHeader`, `CardTitle`, `CardDescription`, `CardContent`, `CardFooter`, `Separator`, `Table` |
-| **Overlays & Modals** | `Dialog`, `AlertDialog`, `Sheet`, `Popover`, `Tooltip`, `HoverCard`, `DropdownMenu`, `ContextMenu` |
-| **Navigation** | `Breadcrumb`, `NavigationMenu`, `Pagination`, `Tabs`, `Accordion`, `Collapsible` |
-| **Feedback & Status** | `Alert`, `Badge`, `Progress`, `Skeleton`, `Avatar` |
+| Category | Components | Documentation |
+| :--- | :--- | :--- |
+| **Surfaces & Containers** | `Accordion`, `Card`, `Table`, `Separator`, `Collapsible`, `ScrollArea` | [Accordion Docs](docs/components/accordion.md) • [Card Docs](docs/components/card.md) |
+| **Actions** | `Button`, `Toggle`, `ToggleGroup` | [Button Docs](docs/components/button.md) |
+| **Overlays & Modals** | `Dialog`, `AlertDialog`, `Sheet`, `Popover`, `Tooltip`, `HoverCard`, `DropdownMenu`, `ContextMenu` | [Dialog Docs](docs/components/dialog.md) |
+| **Forms** | `Input`, `Textarea`, `Checkbox`, `Switch`, `Slider`, `RadioGroup`, `Select`, `PhoneInput` | [Live Showcase](https://thatguycodes.github.io/thatguycodes/) |
+| **Navigation** | `Breadcrumb`, `NavigationMenu`, `Pagination`, `Tabs` | [Live Showcase](https://thatguycodes.github.io/thatguycodes/) |
+| **Feedback & Status** | `Alert`, `Badge`, `Progress`, `Skeleton`, `Avatar` | [Live Showcase](https://thatguycodes.github.io/thatguycodes/) |
 
 ### Native Components (`@thatguycodes/design-system/native`)
 - `Button`
