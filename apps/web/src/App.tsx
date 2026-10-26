@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { DESIGN_SYSTEM_VERSION } from '@thatguycodes/design-system';
+import { getComponentDoc } from './docs-data';
 import {
   Moon,
   Sun,
@@ -203,6 +204,7 @@ export default function App() {
   const [selectedComponent, setSelectedComponent] = React.useState<ComponentId>('button');
   const [activeTab, setActiveTab] = React.useState<'preview' | 'code'>('preview');
   const [copiedCmd, setCopiedCmd] = React.useState(false);
+  const [copiedSnippet, setCopiedSnippet] = React.useState<string | null>(null);
   const [searchQuery, setSearchQuery] = React.useState('');
   const [sliderVal, setSliderVal] = React.useState([65]);
   const [switchVal, setSwitchVal] = React.useState(true);
@@ -232,12 +234,19 @@ export default function App() {
     setTimeout(() => setCopiedCmd(false), 2000);
   };
 
+  const copySnippet = (text: string, id: string) => {
+    navigator.clipboard.writeText(text);
+    setCopiedSnippet(id);
+    setTimeout(() => setCopiedSnippet(null), 2000);
+  };
+
   const filteredComponents = ALL_COMPONENTS.filter((c) =>
     c.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
     c.group.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const currentMeta = ALL_COMPONENTS.find((c) => c.id === selectedComponent) || ALL_COMPONENTS[0];
+  const currentDoc = getComponentDoc(selectedComponent);
 
   const groups: Array<ComponentMeta['group']> = [
     'Atoms (Primitives)',
@@ -1235,12 +1244,241 @@ export default function App() {
               </div>
             ) : (
               /* Code Tab */
-              <div className="rounded-xl border border-border bg-card p-4 font-mono text-xs overflow-x-auto text-foreground shadow-xs">
-                <pre>
-                  {`import { ${currentMeta.name.replace(/\s+/g, '')} } from "@/components/ui/${selectedComponent}";\n\nexport default function Example() {\n  return (\n    <${currentMeta.name.replace(/\s+/g, '')} />\n  );\n}`}
-                </pre>
+              <div className="rounded-xl border border-border bg-card p-4 font-mono text-xs overflow-x-auto text-foreground shadow-xs relative">
+                <div className="flex justify-between items-center mb-3 pb-2 border-b border-border">
+                  <span className="text-[11px] font-mono text-muted-foreground">React 19 / Vite / Next.js Component Usage</span>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => copySnippet(currentDoc.usageCode, 'code-tab')}
+                    className="h-6 px-2 text-[11px]"
+                    leftIcon={
+                      copiedSnippet === 'code-tab' ? (
+                        <Check className="w-3 h-3 text-emerald-500" />
+                      ) : (
+                        <Copy className="w-3 h-3" />
+                      )
+                    }
+                  >
+                    {copiedSnippet === 'code-tab' ? 'Copied' : 'Copy'}
+                  </Button>
+                </div>
+                <pre>{currentDoc.usageCode}</pre>
               </div>
             )}
+
+            {/* Comprehensive Documentation Section (shadcn/ui spec) */}
+            <div className="pt-10 mt-6 border-t border-border space-y-10">
+              {/* 1. Installation */}
+              <section className="space-y-3">
+                <div className="flex items-center gap-2">
+                  <h2 className="text-xl font-bold tracking-tight text-foreground font-sans">
+                    Installation
+                  </h2>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Install the sovereign design system package using your preferred package manager:
+                </p>
+                <div className="rounded-lg bg-card border border-border p-3.5 font-mono text-xs flex items-center justify-between shadow-xs">
+                  <div className="flex items-center gap-2 text-foreground truncate">
+                    <Terminal className="w-4 h-4 text-primary shrink-0" />
+                    <span className="truncate">npm install @thatguycodes/design-system</span>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => copySnippet('npm install @thatguycodes/design-system', 'install-npm')}
+                    className="h-7 px-2.5 text-xs shrink-0"
+                    leftIcon={
+                      copiedSnippet === 'install-npm' ? (
+                        <Check className="w-3.5 h-3.5 text-emerald-500" />
+                      ) : (
+                        <Copy className="w-3.5 h-3.5" />
+                      )
+                    }
+                  >
+                    {copiedSnippet === 'install-npm' ? 'Copied' : 'Copy'}
+                  </Button>
+                </div>
+              </section>
+
+              {/* 2. Usage (Web) */}
+              <section className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-xl font-bold tracking-tight text-foreground font-sans">
+                    Web Usage
+                  </h2>
+                  <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-primary/10 text-primary font-semibold border border-primary/20">
+                    React 19 & Next.js
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Import the component and ensure the unified stylesheet is loaded at root:
+                </p>
+                <div className="rounded-lg bg-card border border-border p-4 font-mono text-xs overflow-x-auto relative shadow-xs">
+                  <div className="flex justify-between items-center mb-2 pb-2 border-b border-border/60">
+                    <span className="text-[10px] text-muted-foreground">Import Statement</span>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      onClick={() => copySnippet(currentDoc.webImport, 'web-import')}
+                      className="h-6 px-2 text-[11px]"
+                    >
+                      {copiedSnippet === 'web-import' ? 'Copied' : 'Copy'}
+                    </Button>
+                  </div>
+                  <pre className="text-primary font-semibold mb-3">{currentDoc.webImport}</pre>
+                  <div className="pt-2 border-t border-border/40">
+                    <pre className="text-foreground/90">{currentDoc.usageCode}</pre>
+                  </div>
+                </div>
+              </section>
+
+              {/* 3. Mobile Usage (React Native / Expo) */}
+              {currentDoc.mobileUsageCode && (
+                <section className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <h2 className="text-xl font-bold tracking-tight text-foreground font-sans">
+                      Mobile Usage (React Native / Expo)
+                    </h2>
+                    <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-500 font-semibold border border-emerald-500/20">
+                      iOS & Android
+                    </span>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Import native cross-platform primitives styled with NativeWind and universal tokens:
+                  </p>
+                  <div className="rounded-lg bg-card border border-border p-4 font-mono text-xs overflow-x-auto relative shadow-xs">
+                    {currentDoc.mobileImport && (
+                      <div className="flex justify-between items-center mb-2 pb-2 border-b border-border/60">
+                        <span className="text-[10px] text-muted-foreground">Native Import</span>
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={() => copySnippet(currentDoc.mobileImport!, 'mobile-import')}
+                          className="h-6 px-2 text-[11px]"
+                        >
+                          {copiedSnippet === 'mobile-import' ? 'Copied' : 'Copy'}
+                        </Button>
+                      </div>
+                    )}
+                    {currentDoc.mobileImport && (
+                      <pre className="text-emerald-500 font-semibold mb-3">{currentDoc.mobileImport}</pre>
+                    )}
+                    <div className="pt-2 border-t border-border/40">
+                      <pre className="text-foreground/90">{currentDoc.mobileUsageCode}</pre>
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* 4. Anatomy */}
+              <section className="space-y-3">
+                <h2 className="text-xl font-bold tracking-tight text-foreground font-sans">
+                  Anatomy
+                </h2>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Component structural hierarchy and composition pattern:
+                </p>
+                <div className="rounded-lg bg-card border border-border p-4 font-mono text-xs overflow-x-auto shadow-xs text-foreground/90">
+                  <pre>{currentDoc.anatomy}</pre>
+                </div>
+              </section>
+
+              {/* 5. Props & API Reference */}
+              <section className="space-y-3">
+                <div className="flex items-center justify-between">
+                  <h2 className="text-xl font-bold tracking-tight text-foreground font-sans">
+                    API Reference
+                  </h2>
+                  <span className="text-xs font-mono text-muted-foreground">
+                    {currentDoc.props.length} Prop{currentDoc.props.length === 1 ? '' : 's'}
+                  </span>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  Configurable properties and attributes supported by <code className="font-mono text-xs font-semibold text-primary">{currentDoc.name}</code>:
+                </p>
+                <div className="rounded-lg border border-border overflow-hidden shadow-xs bg-card">
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-left text-sm border-collapse">
+                      <thead className="bg-secondary/40 border-b border-border text-[11px] uppercase font-mono text-muted-foreground">
+                        <tr>
+                          <th className="px-4 py-3">Prop</th>
+                          <th className="px-4 py-3">Type</th>
+                          <th className="px-4 py-3">Default</th>
+                          <th className="px-4 py-3">Description</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-border">
+                        {currentDoc.props.map((p) => (
+                          <tr key={p.name} className="hover:bg-secondary/20 transition-colors">
+                            <td className="px-4 py-3 font-mono text-xs font-semibold text-primary whitespace-nowrap">
+                              {p.name}
+                            </td>
+                            <td className="px-4 py-3 font-mono text-[11px] text-muted-foreground whitespace-nowrap">
+                              <code>{p.type}</code>
+                            </td>
+                            <td className="px-4 py-3 font-mono text-xs text-muted-foreground/80 whitespace-nowrap">
+                              {p.default ? <code>{p.default}</code> : '-'}
+                            </td>
+                            <td className="px-4 py-3 text-xs text-foreground/90 leading-relaxed min-w-[240px]">
+                              {p.description}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+
+              {/* 6. Accessibility */}
+              {currentDoc.accessibility && (
+                <section className="space-y-3 pb-12">
+                  <h2 className="text-xl font-bold tracking-tight text-foreground font-sans">
+                    Accessibility & ARIA
+                  </h2>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Built to adhere strictly to the W3C WAI-ARIA authoring practices with keyboard focus traps and high-contrast color tokens:
+                  </p>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {currentDoc.accessibility.keyboard && (
+                      <div className="rounded-lg bg-card border border-border p-4 space-y-2 shadow-xs">
+                        <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+                          <Terminal className="w-3.5 h-3.5 text-primary" />
+                          <span>Keyboard Navigation</span>
+                        </h4>
+                        <ul className="space-y-1.5 text-xs text-foreground/90 pt-1">
+                          {currentDoc.accessibility.keyboard.map((k, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-primary font-mono text-xs">•</span>
+                              <span>{k}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+
+                    {currentDoc.accessibility.aria && (
+                      <div className="rounded-lg bg-card border border-border p-4 space-y-2 shadow-xs">
+                        <h4 className="text-xs font-mono font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+                          <Shield className="w-3.5 h-3.5 text-emerald-500" />
+                          <span>ARIA States & Roles</span>
+                        </h4>
+                        <ul className="space-y-1.5 text-xs text-foreground/90 pt-1">
+                          {currentDoc.accessibility.aria.map((a, i) => (
+                            <li key={i} className="flex items-start gap-2">
+                              <span className="text-emerald-500 font-mono text-xs">•</span>
+                              <span>{a}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
+                  </div>
+                </section>
+              )}
+            </div>
           </main>
         </div>
       </div>

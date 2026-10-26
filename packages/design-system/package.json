@@ -1,6 +1,6 @@
 {
   "name": "@thatguycodes/design-system",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Official cross-platform design system for ThatGuyCodes across Web (React), Mobile (React Native / Expo), and Universal Tokens",
   "license": "MIT",
   "homepage": "https://thatguycodes.github.io/thatguycodes/",
