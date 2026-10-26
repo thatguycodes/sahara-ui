@@ -4678,8 +4678,6 @@ __metadata:
     "@radix-ui/react-toggle": "npm:^1.2.1"
     "@radix-ui/react-toggle-group": "npm:^1.2.1"
     "@radix-ui/react-tooltip": "npm:^1.4.1"
-    "@thatguycodes/tokens": "workspace:*"
-    "@thatguycodes/ui-native": "workspace:*"
     "@types/react": "npm:^19.3.0"
     "@types/react-dom": "npm:^19.3.0"
     class-variance-authority: "npm:^0.7.1"
@@ -4690,6 +4688,9 @@ __metadata:
   peerDependencies:
     react: ^18.0.0 || ^19.0.0
     react-dom: ^18.0.0 || ^19.0.0
+  peerDependenciesMeta:
+    react-dom:
+      optional: true
   languageName: unknown
   linkType: soft
 
