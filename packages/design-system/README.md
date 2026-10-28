@@ -4,15 +4,15 @@
 
 [![npm version](https://img.shields.io/npm/v/@thatguycodes/design-system.svg?style=flat-square&color=8b5cf6)](https://www.npmjs.com/package/@thatguycodes/design-system)
 [![npm downloads](https://img.shields.io/npm/dm/@thatguycodes/design-system.svg?style=flat-square)](https://www.npmjs.com/package/@thatguycodes/design-system)
-[![Live Documentation](https://img.shields.io/badge/Docs-GitHub%20Pages-brightgreen?style=flat-square)](https://thatguycodes.github.io/thatguycodes/)
-[![GitHub repo](https://img.shields.io/badge/GitHub-thatguycodes%2Fthatguycodes-blue?style=flat-square&logo=github)](https://github.com/thatguycodes/thatguycodes)
+[![Live Documentation](https://img.shields.io/badge/Docs-GitHub%20Pages-brightgreen?style=flat-square)](https://thatguycodes.github.io/sahara-ui/)
+[![GitHub repo](https://img.shields.io/badge/GitHub-thatguycodes%2Fsahara--ui-blue?style=flat-square&logo=github)](https://github.com/thatguycodes/sahara-ui)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 
 ---
 
 ## 🌟 Interactive Documentation & Showcase
 Experience the live component showcase, theme switcher (Obsidian Dark & Daylight Light), and interactive widgets:
-👉 **[View Live Showcase on GitHub Pages](https://thatguycodes.github.io/thatguycodes/)**
+👉 **[View Live Showcase on GitHub Pages](https://thatguycodes.github.io/sahara-ui/)**
 
 ---
 
@@ -183,9 +183,9 @@ console.log(radii.md);                     // "0.5rem"
 | **Surfaces & Containers** | `Accordion`, `Card`, `Table`, `Separator`, `Collapsible`, `ScrollArea` | [Accordion Docs](docs/components/accordion.md) • [Card Docs](docs/components/card.md) |
 | **Actions** | `Button`, `Toggle`, `ToggleGroup` | [Button Docs](docs/components/button.md) |
 | **Overlays & Modals** | `Dialog`, `AlertDialog`, `Sheet`, `Popover`, `Tooltip`, `HoverCard`, `DropdownMenu`, `ContextMenu` | [Dialog Docs](docs/components/dialog.md) |
-| **Forms** | `Input`, `Textarea`, `Checkbox`, `Switch`, `Slider`, `RadioGroup`, `Select`, `PhoneInput` | [Live Showcase](https://thatguycodes.github.io/thatguycodes/) |
-| **Navigation** | `Breadcrumb`, `NavigationMenu`, `Pagination`, `Tabs` | [Live Showcase](https://thatguycodes.github.io/thatguycodes/) |
-| **Feedback & Status** | `Alert`, `Badge`, `Progress`, `Skeleton`, `Avatar` | [Live Showcase](https://thatguycodes.github.io/thatguycodes/) |
+| **Forms** | `Input`, `Textarea`, `Checkbox`, `Switch`, `Slider`, `RadioGroup`, `Select`, `PhoneInput` | [Live Showcase](https://thatguycodes.github.io/sahara-ui/) |
+| **Navigation** | `Breadcrumb`, `NavigationMenu`, `Pagination`, `Tabs` | [Live Showcase](https://thatguycodes.github.io/sahara-ui/) |
+| **Feedback & Status** | `Alert`, `Badge`, `Progress`, `Skeleton`, `Avatar` | [Live Showcase](https://thatguycodes.github.io/sahara-ui/) |
 
 ### Native Components (`@thatguycodes/design-system/native`)
 - `Button`
@@ -223,11 +223,11 @@ The design system stylesheet includes complete CSS variables for two themes:
 ---
 
 ## 🤝 Repository & Contributing
-The design system is developed inside the [thatguycodes monorepo](https://github.com/thatguycodes/thatguycodes).
+The design system is developed inside the [sahara-ui monorepo](https://github.com/thatguycodes/sahara-ui).
 
-To contribute, report issues, or suggest new components, please see the [Contributing Guidelines](https://github.com/thatguycodes/thatguycodes/blob/main/CONTRIBUTING.md).
+To contribute, report issues, or suggest new components, please see the [Contributing Guidelines](https://github.com/thatguycodes/sahara-ui/blob/main/CONTRIBUTING.md).
 
 ---
 
 ## 📄 License
-MIT © [ThatGuyCodes](https://github.com/thatguycodes)
+MIT © [ThatGuyCodes](https://github.com/thatguycodes/sahara-ui)

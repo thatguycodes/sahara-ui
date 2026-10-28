@@ -723,7 +723,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
                 <span className="material-symbols-outlined text-[19px]">arrow_forward</span>
               </button>
               <a
-                href="https://github.com/thatguycodes/thatguycodes"
+                href="https://github.com/thatguycodes/sahara-ui"
                 target="_blank"
                 rel="noreferrer"
                 className="px-6 h-12 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-title-md text-title-md transition-all shadow-xs border border-border flex items-center gap-2 cursor-pointer"
@@ -749,7 +749,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
           </div>
           <div className="flex items-center gap-6 font-label-md text-label-md text-on-surface-variant">
             <a
-              href="https://github.com/thatguycodes/thatguycodes"
+              href="https://github.com/thatguycodes/sahara-ui"
               target="_blank"
               rel="noreferrer"
               className="hover:text-on-surface transition-colors"

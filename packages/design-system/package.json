@@ -3,14 +3,14 @@
   "version": "1.0.2",
   "description": "Official cross-platform design system for ThatGuyCodes across Web (React), Mobile (React Native / Expo), and Universal Tokens",
   "license": "MIT",
-  "homepage": "https://thatguycodes.github.io/thatguycodes/",
+  "homepage": "https://thatguycodes.github.io/sahara-ui/",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thatguycodes/thatguycodes.git",
+    "url": "https://github.com/thatguycodes/sahara-ui.git",
     "directory": "packages/design-system"
   },
   "bugs": {
-    "url": "https://github.com/thatguycodes/thatguycodes/issues"
+    "url": "https://github.com/thatguycodes/sahara-ui/issues"
   },
   "keywords": [
     "design-system",

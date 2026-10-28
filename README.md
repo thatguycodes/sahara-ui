@@ -3,8 +3,8 @@
 > **The Sovereign AI & $0/mo Full-Stack Engineer Platform**  
 > An open-source, production-grade monorepo containing the **ThatGuyCodes Design System**, **Next-ready Web Showcase**, and **Cross-Platform Mobile App (iOS & Android)** powered by **Nx** and **Yarn Modern (v4.6.0)**.
 
-[![GitHub Repository](https://img.shields.io/badge/GitHub-thatguycodes%2Fthatguycodes-blue?logo=github)](https://github.com/thatguycodes/thatguycodes)
-[![Package](https://img.shields.io/badge/package-@thatguycodes%2Fdesign--system-violet)](https://github.com/thatguycodes/thatguycodes/tree/main/packages/design-system)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-thatguycodes%2Fsahara--ui-blue?logo=github)](https://github.com/thatguycodes/sahara-ui)
+[![Package](https://img.shields.io/badge/package-@thatguycodes%2Fdesign--system-violet)](https://github.com/thatguycodes/sahara-ui/tree/main/packages/design-system)
 [![Nx Powered](https://img.shields.io/badge/monorepo-Nx%2024-143055?logo=nx)](https://nx.dev)
 [![Yarn v4](https://img.shields.io/badge/package__manager-yarn%204.6.0-2C8EBB?logo=yarn)](https://yarnpkg.com)
 

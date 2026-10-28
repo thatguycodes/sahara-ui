@@ -387,7 +387,7 @@ export default function App() {
               </a>
 
               <a
-                href="https://github.com/thatguycodes/thatguycodes"
+                href="https://github.com/thatguycodes/sahara-ui"
                 target="_blank"
                 rel="noreferrer"
                 className="hidden sm:flex items-center gap-1.5 text-xs font-mono px-2.5 py-1 rounded-md border border-border bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground transition-colors"
