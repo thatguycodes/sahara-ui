@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"surface-dim":"#e0d8d5","on-secondary":"#ffffff","secondary-fixed-dim":"#ffb68e","primary":"#944516","on-background":"#1e1b19","on-secondary-fixed-variant":"#763300","on-secondary-container":"#682c00","on-tertiary-container":"#fffbff","tertiary-fixed":"#ffdbcc","primary-fixed":"#ffdbcb","on-primary-container":"#fffbff","inverse-surface":"#33302d","outline":"#887369","surface-bright":"#fff8f5","tertiary-container":"#af5f36","secondary-fixed":"#ffdbca","on-secondary-fixed":"#331200","background":"#fff8f5","tertiary-fixed-dim":"#ffb693","primary-fixed-dim":"#ffb692","surface-container-lowest":"#ffffff","surface-variant":"#e9e1dd","surface-container":"#f4ece8","tertiary":"#904821","on-surface":"#1e1b19","on-primary-fixed-variant":"#793101","surface-container-high":"#eee7e3","surface-tint":"#974818","primary-container":"#b35d2c","error":"#ba1a1a","on-tertiary-fixed":"#351000","error-container":"#ffdad6","on-primary-fixed":"#341100","on-surface-variant":"#55433b","surface":"#fff8f5","surface-container-low":"#faf2ee","on-error":"#ffffff","surface-container-highest":"#e9e1dd","inverse-primary":"#ffb692","on-tertiary-fixed-variant":"#76330d","on-error-container":"#93000a","outline-variant":"#dbc1b6","on-tertiary":"#ffffff","on-primary":"#ffffff","secondary-container":"#fd8a42","secondary":"#9b4500","inverse-on-surface":"#f7efeb"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-xs":"0.25rem","margin-mobile":"1.25rem","space-md":"1rem","gutter-mobile":"1rem","gutter":"1.5rem","space-sm":"0.5rem","space-xl":"2.5rem","margin-tablet":"2rem","margin":"3rem","space-lg":"1.5rem"},"fontFamily":{"headline-lg":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"body-md":["Plus Jakarta Sans"],"display-lg":["Plus Jakarta Sans"],"body-sm":["Plus Jakarta Sans"],"display-md":["Plus Jakarta Sans"],"body-lg":["Plus Jakarta Sans"],"label-md":["Plus Jakarta Sans"],"title-md":["Plus Jakarta Sans"],"headline-md":["Plus Jakarta Sans"],"label-sm":["Plus Jakarta Sans"],"display-md-mobile":["Plus Jakarta Sans"]},"fontSize":{"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"display-lg-mobile":["38px",{"lineHeight":"46px","letterSpacing":"-0.025em","fontWeight":"700"}],"body-md":["15px",{"lineHeight":"22px","fontWeight":"400"}],"display-lg":["56px",{"lineHeight":"64px","letterSpacing":"-0.03em","fontWeight":"700"}],"body-sm":["13px",{"lineHeight":"18px","fontWeight":"400"}],"display-md":["44px",{"lineHeight":"52px","letterSpacing":"-0.025em","fontWeight":"700"}],"body-lg":["17px",{"lineHeight":"26px","fontWeight":"400"}],"label-md":["13px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"600"}],"title-md":["17px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"headline-md":["26px",{"lineHeight":"34px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"700"}],"display-md-mobile":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"700"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(78,53,36,0.04)]"><div class="h-16 max-w-[1320px] mx-auto px-6 lg:px-12 flex items-center justify-between gap-4"><div class="flex items-center gap-8"><a class="flex items-center gap-2 text-on-surface" data-path="landing-page" href="#"><div class="w-8 h-8 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container"><span class="material-symbols-outlined text-[20px]">filter_hdr</span></div><span class="font-title-md text-title-md font-bold tracking-tight text-on-surface">Sahara UI</span></a><nav class="hidden md:flex items-center gap-6" data-active-classes="text-primary font-title-md font-semibold"><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="docs-introduction" href="#">Docs</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="component-button" href="#">Components</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="blocks-library" href="#">Blocks</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="docs-installation" href="#">Getting Started</a><a class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors" data-path="showcase" href="#">Showcase</a></nav></div><div class="flex items-center gap-3"><button class="hidden sm:flex items-center gap-3 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-body-sm text-body-sm">Search documentation...</span><kbd class="px-1.5 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-on-surface-variant">⌘K</kbd></button><a class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-variant transition-colors" href="#"><span class="material-symbols-outlined text-[18px]">star</span><span class="font-label-md text-label-md">14.2k</span></a><button class="w-9 h-9 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">light_mode</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface"><div class="flex flex-col w-full">
+<!-- ANNOUNCEMENT BANNER -->
+<section class="w-full flex justify-center px-4 pt-6 pb-2">
+<a class="group inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-surface-container-high hover:bg-surface-variant transition-all duration-300 shadow-sm" href="#">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-pulse"></span>
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="font-bold text-primary">v2.4</span>
+<span class="text-on-surface-variant">Apple Liquid Glass &amp; Dual-Mode Sandstone Primitives</span>
+<span class="text-primary group-hover:translate-x-0.5 transition-transform duration-200">→ Read Release</span>
+</span>
+</a>
+</section>
+<!-- HERO SECTION -->
+<section class="relative w-full max-w-[1320px] mx-auto px-6 lg:px-12 pt-10 pb-20 overflow-hidden">
+<!-- Atmospheric Ambient Halo -->
+<div class="absolute top-12 left-1/2 -translate-x-1/2 w-[720px] h-[380px] bg-gradient-to-b from-secondary-container/15 via-primary-fixed/20 to-transparent blur-3xl rounded-full pointer-events-none -z-10"></div>
+<div class="flex flex-col items-center text-center max-w-4xl mx-auto">
+<!-- Mineral Overline Badge -->
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container mb-6 shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">landscape</span>
+<span class="font-label-sm text-label-sm tracking-wider uppercase text-on-surface-variant">Desert Modernism Design System</span>
+</div>
+<!-- Main Headline -->
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight text-balance mb-6">
+        The Foundation for your <span class="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent">Sovereign Interface</span>.
+      </h1>
+<!-- Subtitle -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl text-balance mb-10 leading-relaxed">
+        Composable, accessible, desert-toned components engineered with warm sandstone aesthetics, zero runtime overhead, and total copy-paste code ownership.
+      </p>
+<!-- Action Row -->
+<div class="flex flex-wrap items-center justify-center gap-4 w-full mb-10">
+<a class="inline-flex items-center justify-center gap-2 px-6 h-12 rounded-lg bg-primary hover:bg-secondary text-on-primary font-title-md text-title-md transition-all duration-200 shadow-md hover:shadow-lg active:scale-[0.99]" href="#">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+          Get Started
+        </a>
+<button class="inline-flex items-center justify-center gap-3 px-5 h-12 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-title-md text-title-md shadow-sm transition-all duration-200" type="button">
+<span class="material-symbols-outlined text-[19px] text-on-surface-variant">widgets</span>
+          View Components
+          <kbd class="px-2 py-0.5 rounded bg-surface-container-highest font-label-sm text-label-sm text-on-surface-variant">⌘K</kbd>
+</button>
+</div>
+<!-- Interactive Quick CLI Copy Box -->
+<div class="w-full max-w-md mx-auto">
+<div class="flex items-center justify-between px-4 py-2.5 rounded-lg bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow duration-200">
+<div class="flex items-center gap-3 font-mono text-[13px] text-on-surface overflow-x-auto">
+<span class="text-primary font-semibold select-none">$</span>
+<span class="tracking-tight" id="cli-command">pnpm dlx sahara-ui@latest init</span>
+</div>
+<button class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-surface-container text-on-surface-variant hover:text-primary hover:bg-surface-variant text-[12px] font-medium transition-colors" id="copy-btn" onclick="copyCliCommand()" title="Copy CLI Command">
+<span class="material-symbols-outlined text-[16px]" id="copy-icon">content_copy</span>
+<span class="font-label-sm text-label-sm" id="copy-label">Copy</span>
+</button>
+</div>
+</div>
+<!-- Framework Compatibility Row -->
+<div class="mt-14 pt-8 w-full max-w-3xl flex flex-col items-center">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant/80 mb-4">First-class compatibility with modern toolchains</span>
+<div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 font-title-md text-title-md text-on-surface-variant">
+<div class="flex items-center gap-2 hover:text-on-surface transition-colors">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Next.js 15
+          </div>
+<div class="flex items-center gap-2 hover:text-on-surface transition-colors">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span> React 19
+          </div>
+<div class="flex items-center gap-2 hover:text-on-surface transition-colors">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span> Vite
+          </div>
+<div class="flex items-center gap-2 hover:text-on-surface transition-colors">
+<span class="w-2 h-2 rounded-full bg-primary-container"></span> Tailwind CSS v4
+          </div>
+<div class="flex items-center gap-2 hover:text-on-surface transition-colors">
+<span class="w-2 h-2 rounded-full bg-outline"></span> TypeScript 5.8
+          </div>
+</div>
+</div>
+</div>
+</section>
+<!-- LIVE COMPONENT PLAYGROUND & SHOWCASE -->
+<section class="w-full max-w-[1320px] mx-auto px-6 lg:px-12 py-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+<div>
+<div class="flex items-center gap-2 text-primary font-label-md text-label-md uppercase tracking-wider mb-2">
+<span class="material-symbols-outlined text-[16px]">tune</span>
+          Tactile Sandstone Primitives
+        </div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Interactive Component Enclave</h2>
+</div>
+<!-- Top Component Category Switcher -->
+<div class="flex items-center p-1 rounded-xl bg-surface-container shadow-inner">
+<button class="cat-pill px-4 py-1.5 rounded-lg font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-sm transition-all duration-200" id="cat-enclave" onclick="setPlaygroundCategory('enclave')">Enclaves</button>
+<button class="cat-pill px-4 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200" id="cat-buttons" onclick="setPlaygroundCategory('buttons')">Buttons</button>
+<button class="cat-pill px-4 py-1.5 rounded-lg font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all duration-200" id="cat-status" onclick="setPlaygroundCategory('status')">Badges &amp; Docks</button>
+</div>
+</div>
+<!-- Playground Workspace Frame -->
+<div class="w-full rounded-2xl bg-surface-container-lowest shadow-md overflow-hidden flex flex-col">
+<!-- Toolbar Header -->
+<div class="h-14 px-6 bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-4">
+<!-- View Modes -->
+<div class="flex items-center p-1 rounded-lg bg-surface-container">
+<button class="flex items-center gap-1.5 px-3 py-1 rounded font-label-md text-label-md bg-surface-container-lowest text-on-surface shadow-xs transition-all" id="mode-preview-btn" onclick="setPreviewMode('preview')">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+              Preview
+            </button>
+<button class="flex items-center gap-1.5 px-3 py-1 rounded font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all" id="mode-code-btn" onclick="setPreviewMode('code')">
+<span class="material-symbols-outlined text-[16px]">code</span>
+              Code (React)
+            </button>
+</div>
+<span class="text-outline-variant select-none hidden sm:inline">|</span>
+<span class="hidden sm:inline font-body-sm text-body-sm text-on-surface-variant">Sandstone Canvas Light</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-variant font-label-md text-label-md text-on-surface transition-colors" onclick="copyCurrentSnippet()" title="Copy React Source">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span id="playground-copy-txt">Copy Code</span>
+</button>
+</div>
+</div>
+<!-- Preview Stage -->
+<div class="p-8 md:p-14 bg-surface-bright flex items-center justify-center min-h-[380px] relative overflow-hidden" id="playground-preview-stage">
+<!-- Subtle dune landscape pattern -->
+<div class="absolute inset-0 bg-gradient-to-tr from-surface-container/40 via-transparent to-primary-fixed/20 pointer-events-none"></div>
+<!-- 1. ENCLAVE SHOWCASE (Default) -->
+<div class="w-full max-w-md relative z-10" id="view-enclave">
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-xl flex flex-col gap-5">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[22px]">shield_lock</span>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-on-surface font-bold">Zero-Knowledge Enclave</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">ZK-Rollup Dune Verifier v4</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+                Active • 24°C
+              </span>
+</div>
+<!-- Telemetry Bar -->
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant uppercase tracking-wider">Entropy Buffer Saturation</span>
+<span class="font-mono text-on-surface font-semibold">94.8%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-variant overflow-hidden">
+<div class="h-full bg-gradient-to-r from-secondary to-primary rounded-full transition-all duration-500" style="width: 94.8%"></div>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-3 pt-1">
+<button class="flex-1 h-10 rounded-lg bg-primary hover:bg-secondary text-on-primary font-label-md text-label-md transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">lock_reset</span>
+                Rotate Keys
+              </button>
+<button class="px-4 h-10 rounded-lg bg-surface-container hover:bg-surface-variant text-on-surface font-label-md text-label-md transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">terminal</span>
+                Logs
+              </button>
+</div>
+</div>
+</div>
+<!-- 2. BUTTONS SHOWCASE (Hidden initially) -->
+<div class="hidden w-full max-w-lg flex flex-col items-center gap-6 relative z-10" id="view-buttons">
+<div class="flex flex-wrap items-center justify-center gap-4">
+<button class="px-6 h-11 rounded-lg bg-primary hover:bg-secondary text-on-primary font-title-md text-title-md transition-all shadow-md active:scale-95 flex items-center gap-2">
+<span>Deploy Mirage Protocol</span>
+<span class="material-symbols-outlined text-[18px]">rocket_launch</span>
+</button>
+<button class="px-5 h-11 rounded-lg bg-surface-container-lowest/80 backdrop-blur-md hover:bg-surface-container text-on-surface font-title-md text-title-md transition-all shadow-sm flex items-center gap-2">
+<span>Sync Sandpoint</span>
+<kbd class="px-1.5 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">⌘S</kbd>
+</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="px-4 py-2 rounded-lg bg-surface-container-low hover:bg-surface-variant text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">tune</span> Filter Strata
+            </button>
+<button class="w-10 h-10 rounded-lg bg-surface-container-lowest hover:bg-primary hover:text-on-primary text-on-surface transition-colors flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+</button>
+<button class="px-4 py-2 rounded-lg bg-error-container text-on-error-container font-label-md text-label-md hover:opacity-90 transition-opacity">
+              Evaporate Cache
+            </button>
+</div>
+</div>
+<!-- 3. STATUS & DOCKS SHOWCASE (Hidden initially) -->
+<div class="hidden w-full max-w-lg flex flex-col items-center gap-6 relative z-10" id="view-status">
+<!-- Segmented Filter Dock -->
+<div class="inline-flex p-1.5 rounded-full bg-surface-container-lowest shadow-md">
+<button class="px-4 py-1.5 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm">All Dunes (84)</button>
+<button class="px-4 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Active Oases</button>
+<button class="px-4 py-1.5 rounded-full text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Bedrock Clusters</button>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Solstice Synced
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">wb_sunny</span> High Zenith
+            </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">terminal</span> zero-runtime
+            </span>
+</div>
+</div>
+</div>
+<!-- Code Inspector Stage -->
+<div class="hidden p-6 bg-inverse-surface text-inverse-on-surface font-mono text-[13px] overflow-x-auto min-h-[380px]" id="playground-code-stage">
+<pre class="leading-relaxed" id="code-snippet-pre"><code class="text-tertiary-fixed font-normal">// Sahara UI Enclave Card Primitive
+import { EnclaveCard, EnclaveHeader, EnclaveTelemetry, EnclaveBadge, Button } from "@/components/ui/enclave";
+
+export function SolsticeEnclave() {
+  return (
+    &lt;EnclaveCard variant="sandstone" elevation="crest"&gt;
+      &lt;EnclaveHeader
+        title="Zero-Knowledge Enclave"
+        subtitle="ZK-Rollup Dune Verifier v4"
+        badge={&lt;EnclaveBadge status="live"&gt;Active • 24°C&lt;/EnclaveBadge&gt;}
+      /&gt;
+      &lt;EnclaveTelemetry metric="Entropy Saturation" value={94.8} /&gt;
+      &lt;div className="flex gap-3 mt-4"&gt;
+        &lt;Button variant="primary" icon="lock_reset"&gt;Rotate Keys&lt;/Button&gt;
+        &lt;Button variant="ghost" icon="terminal"&gt;Logs&lt;/Button&gt;
+      &lt;/div&gt;
+    &lt;/EnclaveCard&gt;
+  );
+}</code></pre>
+</div>
+</div>
+</section>
+<!-- VALUE PROPOSITION GRID -->
+<section class="w-full max-w-[1320px] mx-auto px-6 lg:px-12 py-16">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Uncompromising Engineering</span>
+<h2 class="font-display-md text-display-md text-on-surface mt-2 tracking-tight">Engineered for Sovereign Craftsmen</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3">
+        Built around the philosophy that great user interfaces are personal, local, and completely free of opaque dependency lock-ins.
+      </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature 1 -->
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed mb-6">
+<span class="material-symbols-outlined text-[26px]">folder_copy</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3">Copy &amp; Paste Ownership</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            You own the code. Not a closed black-box npm package that breaks with React releases. Drop zero-dependency, fully accessible primitives directly into your repository.
+          </p>
+</div>
+<div class="mt-8 pt-4 flex items-center gap-2 font-label-md text-label-md text-primary font-semibold">
+<span>Explore Architecture</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed mb-6">
+<span class="material-symbols-outlined text-[26px]">contrast</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3">Solstice &amp; Nocturne Dual-Themes</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Handcrafted Sahara Solstice (bleached sand) and Nocturne (warm volcanic basalt) color schemes designed for zero optical fatigue and strict WCAG AAA contrast compliance.
+          </p>
+</div>
+<div class="mt-8 pt-4 flex items-center gap-2 font-label-md text-label-md text-primary font-semibold">
+<span>Preview Color Tokens</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="p-8 rounded-2xl bg-surface-container-lowest shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed mb-6">
+<span class="material-symbols-outlined text-[26px]">terminal</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-3">CLI-Powered Velocity</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Scaffold primitives, complete dashboard enclaves, telemetry docks, and navigation rails with single-stroke terminal commands. Configured for Tailwind CSS v4 in seconds.
+          </p>
+</div>
+<div class="mt-8 pt-4 flex items-center gap-2 font-label-md text-label-md text-primary font-semibold">
+<span>CLI Documentation</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3-STEP ONBOARDING WALKTHROUGH -->
+<section class="w-full bg-surface-container-low py-20 my-6">
+<div class="max-w-[1320px] mx-auto px-6 lg:px-12">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Fast Integration</span>
+<h2 class="font-display-md text-display-md text-on-surface tracking-tight mt-1">Ready in Three Steps</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+          Zero configuration headache. Follow the simple workflow to bootstrap your application with production-ready primitives.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Step 1 -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm font-bold px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed">STEP 01</span>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">rocket</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mb-2">Initialize your project</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+              Run the CLI wizard inside any Next.js, Vite, or Remix workspace to inject font scales and sandstone tokens.
+            </p>
+</div>
+<div class="p-3 rounded-lg bg-inverse-surface font-mono text-[12px] text-inverse-on-surface flex items-center justify-between">
+<code>pnpm dlx sahara-ui init</code>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-on-primary">content_copy</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm font-bold px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed">STEP 02</span>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">add_box</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mb-2">Add your primitives</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+              Pick the atomic components you need. Code lands directly in your <code class="px-1.5 py-0.5 bg-surface-container rounded font-mono text-[12px]">@/components/ui</code> directory.
+            </p>
+</div>
+<div class="p-3 rounded-lg bg-inverse-surface font-mono text-[12px] text-inverse-on-surface flex items-center justify-between">
+<code>pnpm dlx sahara-ui add button enclave</code>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-on-primary">content_copy</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="p-6 rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="font-label-sm text-label-sm font-bold px-2 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed">STEP 03</span>
+<span class="material-symbols-outlined text-outline-variant text-[20px]">code_blocks</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-semibold mb-2">Compose and ship</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-6">
+              Freely modify styles, adjust Tailwind variants, or add custom brand logic without fighting abstract wrapper libraries.
+            </p>
+</div>
+<div class="p-3 rounded-lg bg-inverse-surface font-mono text-[12px] text-inverse-on-surface flex items-center justify-between">
+<code>import { Button } from "@/components/ui"</code>
+<span class="material-symbols-outlined text-[16px] text-outline cursor-pointer hover:text-on-primary">content_copy</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ARCHITECTURAL SHOWCASE / SPATIAL VISUAL PIECE -->
+<section class="w-full max-w-[1320px] mx-auto px-6 lg:px-12 py-16">
+<div class="rounded-3xl bg-gradient-to-br from-surface-container via-surface-container-low to-surface-container-high p-8 lg:p-14 shadow-md flex flex-col lg:flex-row items-center justify-between gap-12">
+<div class="max-w-xl">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-primary">Spatial Typography &amp; Minerals</span>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mt-2 mb-4">Crafted for Quiet Concentration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-6">
+          Inspired by high desert modernism in Palm Springs, Arizona calderas, and tectonic sandstone canyons. We discarded aggressive saturation in favor of rich earthy warmth that honors your users’ focus.
+        </p>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-xs">
+<span class="font-display-md text-display-md text-primary font-bold">0.0<span class="text-secondary text-[24px]">kb</span></span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Runtime JavaScript bundle tax</p>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-lowest shadow-xs">
+<span class="font-display-md text-display-md text-secondary font-bold">100<span class="text-primary text-[24px]">%</span></span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Accessible ARIA compliant primitives</p>
+</div>
+</div>
+</div>
+<!-- Mineral Stratum Visual Card -->
+<div class="w-full max-w-md p-6 rounded-2xl bg-surface-container-lowest shadow-lg flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md font-semibold text-on-surface">Strata Color Palette</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-on-surface-variant font-mono">Tokens v2</span>
+</div>
+<div class="flex flex-col gap-2.5">
+<div class="h-10 rounded-lg bg-surface flex items-center justify-between px-3 text-on-surface shadow-xs">
+<span class="font-label-md text-label-md">Desert Sand (Base)</span>
+<code class="font-mono text-[11px] text-on-surface-variant">#FFF8F5</code>
+</div>
+<div class="h-10 rounded-lg bg-surface-container flex items-center justify-between px-3 text-on-surface">
+<span class="font-label-md text-label-md">Bleached Limestone</span>
+<code class="font-mono text-[11px] text-on-surface-variant">#F4ECE8</code>
+</div>
+<div class="h-10 rounded-lg bg-primary-fixed flex items-center justify-between px-3 text-on-primary-fixed">
+<span class="font-label-md text-label-md">Sunlit Ochre</span>
+<code class="font-mono text-[11px]">#FFDBCB</code>
+</div>
+<div class="h-10 rounded-lg bg-primary flex items-center justify-between px-3 text-on-primary">
+<span class="font-label-md text-label-md">Terracotta Clay</span>
+<code class="font-mono text-[11px] text-on-primary/90">#944516</code>
+</div>
+<div class="h-10 rounded-lg bg-inverse-surface flex items-center justify-between px-3 text-inverse-on-surface">
+<span class="font-label-md text-label-md">Warm Basalt (Nocturne)</span>
+<code class="font-mono text-[11px] text-surface-variant">#33302D</code>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- BOTTOM CALL TO ACTION -->
+<section class="w-full max-w-[1320px] mx-auto px-6 lg:px-12 py-16 mb-8">
+<div class="relative overflow-hidden rounded-3xl bg-surface-container-high p-10 md:p-16 text-center flex flex-col items-center">
+<!-- Glow -->
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-primary-fixed/40 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+<div class="w-12 h-12 rounded-2xl bg-primary flex items-center justify-center text-on-primary mb-6 shadow-md">
+<span class="material-symbols-outlined text-[28px]">filter_hdr</span>
+</div>
+<h2 class="font-display-md text-display-md text-on-surface tracking-tight">Begin sculpting your interface.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-3 mb-8 text-balance">
+          Explore over 60+ beautifully composed primitives, block templates, and accessible enclaves crafted for sovereign makers.
+        </p>
+<div class="flex flex-wrap items-center justify-center gap-4">
+<a class="px-7 h-12 rounded-lg bg-primary hover:bg-secondary text-on-primary font-title-md text-title-md transition-all shadow-md hover:shadow-lg flex items-center gap-2" href="#">
+<span>Browse Component Gallery</span>
+<span class="material-symbols-outlined text-[19px]">arrow_forward</span>
+</a>
+<a class="px-6 h-12 rounded-lg bg-surface-container-lowest hover:bg-surface-container text-on-surface font-title-md text-title-md transition-all shadow-sm flex items-center gap-2" href="#">
+<span class="material-symbols-outlined text-[20px]">code</span>
+            Star on GitHub
+          </a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<script>
+  // CLI Command Copy Functionality
+  function copyCliCommand() {
+    const text = document.getElementById('cli-command').innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const copyLabel = document.getElementById('copy-label');
+      const copyIcon = document.getElementById('copy-icon');
+      copyLabel.innerText = 'Copied!';
+      copyIcon.innerText = 'check';
+      setTimeout(() => {
+        copyLabel.innerText = 'Copy';
+        copyIcon.innerText = 'content_copy';
+      }, 2000);
+    });
+  }
+
+  // Interactive Playground Category Tab Switcher
+  const categorySnippets = {
+    enclave: `// Sahara UI Enclave Card Primitive
+import { EnclaveCard, EnclaveHeader, EnclaveTelemetry, EnclaveBadge, Button } from "@/components/ui/enclave";
+
+export function SolsticeEnclave() {
+  return (
+    <EnclaveCard variant="sandstone" elevation="crest">
+      <EnclaveHeader
+        title="Zero-Knowledge Enclave"
+        subtitle="ZK-Rollup Dune Verifier v4"
+        badge={<EnclaveBadge status="live">Active • 24°C</EnclaveBadge>}
+      />
+      <EnclaveTelemetry metric="Entropy Saturation" value={94.8} />
+      <div className="flex gap-3 mt-4">
+        <Button variant="primary" icon="lock_reset">Rotate Keys</Button>
+        <Button variant="ghost" icon="terminal">Logs</Button>
+      </div>
+    </EnclaveCard>
+  );
+}`,
+    buttons: `// Sahara UI Tactile Button Primitives
+import { Button, GlassButton } from "@/components/ui/button";
+
+export function ButtonShowcase() {
+  return (
+    <div className="flex flex-wrap gap-4 items-center">
+      <Button variant="primary" size="lg" icon="rocket_launch">
+        Deploy Mirage Protocol
+      </Button>
+
+      <GlassButton shortcut="⌘S">
+        Sync Sandpoint
+      </GlassButton>
+    </div>
+  );
+}`,
+    status: `// Sahara UI Segmented Dock & Status Pills
+import { SegmentedControl, FilterDock, Badge } from "@/components/ui/docks";
+
+export function DockShowcase() {
+  return (
+    <div className="flex flex-col items-center gap-4">
+      <FilterDock
+        items={[
+          { label: "All Dunes (84)", active: true },
+          { label: "Active Oases" },
+          { label: "Bedrock Clusters" }
+        ]}
+      />
+      <Badge variant="solstice" dot>Solstice Synced</Badge>
+    </div>
+  );
+}`
+  };
+
+  let activeCategory = 'enclave';
+
+  function setPlaygroundCategory(category) {
+    activeCategory = category;
+    
+    // Update category tabs style
+    document.querySelectorAll('.cat-pill').forEach(btn => {
+      btn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+      btn.classList.add('text-on-surface-variant');
+    });
+
+    const activeBtn = document.getElementById(`cat-${category}`);
+    if (activeBtn) {
+      activeBtn.classList.remove('text-on-surface-variant');
+      activeBtn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-sm');
+    }
+
+    // Toggle Preview Containers
+    document.getElementById('view-enclave').classList.add('hidden');
+    document.getElementById('view-buttons').classList.add('hidden');
+    document.getElementById('view-status').classList.add('hidden');
+
+    const targetView = document.getElementById(`view-${category}`);
+    if (targetView) targetView.classList.remove('hidden');
+
+    // Update code snippet content
+    const codeTag = document.getElementById('code-snippet-pre').querySelector('code');
+    if (codeTag) {
+      codeTag.innerText = categorySnippets[category];
+    }
+  }
+
+  // Toggle between Preview Stage and Raw Code Stage
+  function setPreviewMode(mode) {
+    const previewStage = document.getElementById('playground-preview-stage');
+    const codeStage = document.getElementById('playground-code-stage');
+    const prevBtn = document.getElementById('mode-preview-btn');
+    const codeBtn = document.getElementById('mode-code-btn');
+
+    if (mode === 'preview') {
+      previewStage.classList.remove('hidden');
+      codeStage.classList.add('hidden');
+      prevBtn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs');
+      prevBtn.classList.remove('text-on-surface-variant');
+      codeBtn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs');
+      codeBtn.classList.add('text-on-surface-variant');
+    } else {
+      previewStage.classList.add('hidden');
+      codeStage.classList.remove('hidden');
+      codeBtn.classList.add('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs');
+      codeBtn.classList.remove('text-on-surface-variant');
+      prevBtn.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'shadow-xs');
+      prevBtn.classList.add('text-on-surface-variant');
+    }
+  }
+
+  function copyCurrentSnippet() {
+    const snippet = categorySnippets[activeCategory];
+    navigator.clipboard.writeText(snippet).then(() => {
+      const copyTxt = document.getElementById('playground-copy-txt');
+      copyTxt.innerText = 'Copied Code!';
+      setTimeout(() => {
+        copyTxt.innerText = 'Copy Code';
+      }, 1800);
+    });
+  }
+</script></main><footer class="w-full bg-surface-container-low shadow-[0_-1px_8px_rgba(78,53,36,0.02)]"><div class="max-w-[1320px] mx-auto px-6 lg:px-12 py-12 flex flex-col md:flex-row items-center justify-between gap-6"><div class="flex items-center gap-3"><div class="w-7 h-7 rounded-lg bg-primary-container flex items-center justify-center text-on-primary-container"><span class="material-symbols-outlined text-[16px]">filter_hdr</span></div><span class="font-body-sm text-body-sm text-on-surface-variant">Crafted for high-focus modern web tools. Inspired by desert modernism.</span></div><div class="flex items-center gap-6 font-label-md text-label-md text-on-surface-variant"><a class="hover:text-on-surface transition-colors" href="#">GitHub</a><a class="hover:text-on-surface transition-colors" href="#">Twitter</a><a class="hover:text-on-surface transition-colors" href="#">Discord</a><a class="hover:text-on-surface transition-colors" href="#">Releases</a></div></div></footer></body></html>

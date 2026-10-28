@@ -105,6 +105,8 @@ import { Label } from '@/components/ui/label';
 import { PhoneInput } from '@/components/ui/phone-input';
 import { CodeSandbox } from '@/components/gen-ui/code-sandbox';
 import { PolarCheckoutCard } from '@/components/gen-ui/polar-checkout-card';
+import { LandingPage } from './components/landing/LandingPage';
+import { DocsPage } from './components/docs/DocsPage';
 
 type ComponentId =
   | 'button'
@@ -201,6 +203,7 @@ const ALL_COMPONENTS: ComponentMeta[] = [
 
 export default function App() {
   const [theme, setTheme] = React.useState<'dark' | 'light'>('dark');
+  const [currentView, setCurrentView] = React.useState<'landing' | 'docs' | 'components'>('landing');
   const [selectedComponent, setSelectedComponent] = React.useState<ComponentId>('button');
   const [activeTab, setActiveTab] = React.useState<'preview' | 'code'>('preview');
   const [copiedCmd, setCopiedCmd] = React.useState(false);
@@ -210,6 +213,43 @@ export default function App() {
   const [switchVal, setSwitchVal] = React.useState(true);
   const [checkVal, setCheckVal] = React.useState(true);
   const [collapsibleOpen, setCollapsibleOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash;
+      if (hash.startsWith('#/docs')) {
+        setCurrentView('docs');
+      } else if (hash.startsWith('#/components')) {
+        setCurrentView('components');
+        const parts = hash.split('/');
+        if (parts[2] && ALL_COMPONENTS.some((c) => c.id === parts[2])) {
+          setSelectedComponent(parts[2] as ComponentId);
+        }
+      } else {
+        setCurrentView('landing');
+      }
+    };
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
+  React.useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+        e.preventDefault();
+        const searchInput = document.getElementById('global-search-input');
+        if (searchInput) {
+          searchInput.focus();
+        } else {
+          handleNavigate('components');
+        }
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   React.useEffect(() => {
     const root = document.documentElement;
@@ -228,8 +268,23 @@ export default function App() {
     setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
 
+  const handleNavigate = (view: 'landing' | 'docs' | 'components', componentId?: string) => {
+    setCurrentView(view);
+    if (componentId && ALL_COMPONENTS.some((c) => c.id === componentId)) {
+      setSelectedComponent(componentId as ComponentId);
+    }
+    if (view === 'landing') {
+      window.location.hash = '#/';
+    } else if (view === 'docs') {
+      window.location.hash = '#/docs';
+    } else if (view === 'components') {
+      window.location.hash = componentId ? `#/components/${componentId}` : '#/components';
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const copyInstallCommand = (comp: string) => {
-    navigator.clipboard.writeText(`npx atomic-ui add ${comp}`);
+    navigator.clipboard.writeText(`pnpm dlx sahara-ui add ${comp}`);
     setCopiedCmd(true);
     setTimeout(() => setCopiedCmd(false), 2000);
   };
@@ -259,33 +314,73 @@ export default function App() {
     <TooltipProvider>
       <div className="min-h-screen flex flex-col bg-background text-foreground transition-colors duration-200">
         {/* Top Navbar */}
-        <header className="sticky top-0 z-50 backdrop-blur-md bg-background/85 border-b border-border px-6 py-3 transition-colors">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center text-primary font-mono font-bold text-sm">
-                &gt;_
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <span className="font-bold tracking-tight text-sm text-foreground font-sans">
-                    atomic
-                  </span>
-                  <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20 text-primary font-medium">
-                    ui / v{DESIGN_SYSTEM_VERSION}
-                  </span>
+        <header className="sticky top-0 z-50 backdrop-blur-md bg-background/85 border-b border-border px-4 sm:px-6 py-3 transition-colors">
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            <div className="flex items-center gap-6">
+              {/* Brand Logo */}
+              <button
+                onClick={() => handleNavigate('landing')}
+                className="flex items-center gap-3 text-left cursor-pointer group"
+              >
+                <div className="w-8 h-8 rounded-lg bg-primary/15 border border-primary/30 flex items-center justify-center text-primary transition-transform group-hover:scale-105 shadow-xs">
+                  <span className="material-symbols-outlined text-[18px]">landscape</span>
                 </div>
-                <p className="text-xs text-muted-foreground">
-                  The Accessible Headless Component Library with Dual-Mode Tokens
-                </p>
-              </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold tracking-tight text-sm text-foreground font-sans">
+                      sahara
+                    </span>
+                    <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-primary/10 border border-primary/20 text-primary font-medium">
+                      ui / v{DESIGN_SYSTEM_VERSION}
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-muted-foreground hidden sm:block">
+                    Desert Modernism Primitives &amp; Tokens
+                  </p>
+                </div>
+              </button>
+
+              {/* Main Navigation Links */}
+              <nav className="hidden md:flex items-center gap-1 font-title-md text-sm">
+                <button
+                  onClick={() => handleNavigate('landing')}
+                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer ${
+                    currentView === 'landing'
+                      ? 'bg-secondary text-primary font-semibold border border-border shadow-xs'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-secondary/60'
+                  }`}
+                >
+                  Home
+                </button>
+                <button
+                  onClick={() => handleNavigate('docs')}
+                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer ${
+                    currentView === 'docs'
+                      ? 'bg-secondary text-primary font-semibold border border-border shadow-xs'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-secondary/60'
+                  }`}
+                >
+                  Docs
+                </button>
+                <button
+                  onClick={() => handleNavigate('components')}
+                  className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors cursor-pointer ${
+                    currentView === 'components'
+                      ? 'bg-secondary text-primary font-semibold border border-border shadow-xs'
+                      : 'text-muted-foreground hover:text-foreground hover:bg-secondary/60'
+                  }`}
+                >
+                  Components
+                </button>
+              </nav>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2.5 sm:gap-3">
               <a
                 href="https://www.npmjs.com/package/@thatguycodes/design-system"
                 target="_blank"
                 rel="noreferrer"
-                className="hidden sm:flex items-center gap-1.5 text-xs font-mono px-2.5 py-1 rounded-md border border-border bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground transition-colors"
+                className="hidden lg:flex items-center gap-1.5 text-xs font-mono px-2.5 py-1 rounded-md border border-border bg-secondary/50 hover:bg-secondary text-muted-foreground hover:text-foreground transition-colors"
               >
                 <span>npm v1.0.1</span>
                 <ExternalLink className="w-3 h-3 opacity-60" />
@@ -301,13 +396,19 @@ export default function App() {
                 <ExternalLink className="w-3 h-3 opacity-60" />
               </a>
 
-              <div className="hidden md:flex items-center gap-2">
+              <div className="relative flex items-center">
                 <Input
-                  placeholder="Search 35+ components..."
+                  id="global-search-input"
+                  placeholder="Search 37+ components... ⌘K"
                   value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    if (currentView !== 'components' && e.target.value.trim().length > 0) {
+                      setCurrentView('components');
+                    }
+                  }}
                   leftIcon={<Search className="w-3.5 h-3.5 text-muted-foreground" />}
-                  className="w-64 h-8 text-xs"
+                  className="w-40 sm:w-56 h-8 text-xs"
                 />
               </div>
 
@@ -320,12 +421,12 @@ export default function App() {
                 {theme === 'dark' ? (
                   <>
                     <Moon className="w-3.5 h-3.5 text-primary" />
-                    <span>Dark</span>
+                    <span className="hidden sm:inline">Nocturne</span>
                   </>
                 ) : (
                   <>
                     <Sun className="w-3.5 h-3.5 text-amber-500" />
-                    <span>Daylight</span>
+                    <span className="hidden sm:inline">Solstice</span>
                   </>
                 )}
               </Button>
@@ -333,8 +434,13 @@ export default function App() {
           </div>
         </header>
 
-        {/* Main Workspace */}
-        <div className="max-w-7xl mx-auto w-full flex-1 flex px-4 md:px-6 py-6 gap-8">
+        {/* View Switcher */}
+        {currentView === 'landing' && <LandingPage onNavigate={handleNavigate} />}
+
+        {currentView === 'docs' && <DocsPage onNavigate={handleNavigate} />}
+
+        {currentView === 'components' && (
+          <div className="max-w-7xl mx-auto w-full flex-1 flex px-4 md:px-6 py-6 gap-8">
           {/* Left Sidebar */}
           <aside className="w-64 shrink-0 hidden md:block">
             <div className="sticky top-20 max-h-[calc(100vh-6rem)] overflow-y-auto pr-2 space-y-6">
@@ -1481,6 +1587,7 @@ export default function App() {
             </div>
           </main>
         </div>
+        )}
       </div>
     </TooltipProvider>
   );
