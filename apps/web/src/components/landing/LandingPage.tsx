@@ -135,7 +135,7 @@ export function LandingPage({ onNavigate }: LandingPageProps) {
           {/* Main Headline */}
           <h1 className="font-display-lg text-display-lg text-on-surface tracking-tight text-balance mb-6">
             The Foundation for your{' '}
-            <span className="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#944516] via-[#c86d3b] to-[#b45309] dark:from-[#ffba56] dark:via-[#ffb59c] dark:to-[#ff9e6c] bg-clip-text text-transparent font-extrabold inline-block">
               Sovereign Interface
             </span>
             .
